@@ -2,7 +2,7 @@ import { combineReducers } from 'redux';
 import { persistReducer } from 'redux-persist';
 import AsyncStorage from '@react-native-community/async-storage';
 
-import services from '../../processes/Services/logic/reducers';
+import services from '../../processes/services/logic/reducers';
 import settings from '../../processes/settings/logic/reducer';
 
 const generateConfig = (reducer: any, key: string, whitelist?: string[], blacklist?: string[]) =>

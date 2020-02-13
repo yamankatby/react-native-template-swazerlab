@@ -1,6 +1,5 @@
 import { Platform, StatusBar, StyleSheet } from 'react-native';
 import { hasNotch } from '../../config/utilities';
-import { fontMaker } from '../../assets/styles';
 
 export default StyleSheet.create({
 // @ts-ignore
@@ -54,8 +53,6 @@ export default StyleSheet.create({
 		fontSize: 16,
 		textAlign: 'left',
 		color: '#fff',
-
-		...fontMaker({ weight: '500' }),
 	},
 	message: {
 		fontSize: 14,

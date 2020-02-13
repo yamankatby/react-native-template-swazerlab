@@ -13,9 +13,9 @@ import {
 import { BlurView } from '@react-native-community/blur';
 import Timer from 'react-native-timer';
 
-import { palette, ThemeContext } from '../../assets/styles';
 import { getColorPalette } from './assets/colors';
 import styles from './styles';
+import { Palette } from '../../assets/styles';
 
 interface Props {
 	visible: boolean;
@@ -32,6 +32,8 @@ interface Props {
 	touchToCancelText?: string;
 
 	onDismiss?: () => void | false;
+
+	palette: Palette;
 }
 
 interface State {
@@ -50,7 +52,6 @@ class ProgressOverlay extends React.Component<Props, State> {
 		size: 'small',
 		cancellable: false,
 	};
-	public static contextType = ThemeContext;
 
 	constructor(props: Props) {
 		super(props);
@@ -136,7 +137,7 @@ class ProgressOverlay extends React.Component<Props, State> {
 			return null;
 		}
 
-		const colorPalette = getColorPalette(theme || appTheme, accentColor || palette.accent());
+		const colorPalette = getColorPalette(theme || appTheme, accentColor || this.props.palette.accent());
 
 		const getIndicator = () =>
 			<ActivityIndicator color={colorPalette.progress} size={size} style={styles.activityIndicator} />;

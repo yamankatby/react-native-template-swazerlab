@@ -1,20 +1,22 @@
-import { persistor, store, useDispatch, useSelector } from './config/store';
-import AppNavigator from './config/navigator';
-import ProgressOverlay from './components/Progress/ProgressOverlay';
-import DropdownAlert from './components/Alert/DropdownAlert';
+import { store, useDispatch, useSelector } from './config/store';
 import { AppStateStatus, Platform, StatusBar, UIManager } from 'react-native';
 import React, { useEffect } from 'react';
 import { Provider } from 'react-redux';
-import { PersistGate } from 'redux-persist/integration/react';
 import Timer from 'react-native-timer';
 import 'react-native-gesture-handler';
+import { usePalette, useTheme } from './assets/styles';
+import SplashScreen from 'react-native-splash-screen';
+import { NetInfoState } from '@react-native-community/netinfo';
+import { clearAlert, updateAppState, updateNetworkStatus } from './processes/services/logic/actions';
+import { increaseRunTimes } from './processes/settings/logic/actions';
+import AppNavigator from './config/navigator';
+import ProgressOverlay from './components/Progress/ProgressOverlay';
+import DropdownAlert from './components/Alert/DropdownAlert';
 
 const App = () => {
 	const dispatch = useDispatch();
 	const alert = useSelector(x => x.services.alert);
 	const progress = useSelector(x => x.services.progress);
-	const isLoggedIn = useSelector(x => x.auth.isLoggedIn);
-	const accessToken = useSelector(x => x.auth.accessToken);
 
 	const theme = useTheme();
 	const palette = usePalette();
@@ -29,7 +31,6 @@ const App = () => {
 	useEffect(() => {
 		if (__DEV__) SplashScreen.hide();
 		else Timer.setTimeout('dismissMsg', () => SplashScreen.hide(), 500);
-
 		return () => {
 			Timer.clearTimeout('dismissMsg');
 		};
@@ -45,11 +46,10 @@ const App = () => {
 
 	const storeDidRehydrate = () => {
 		dispatch(increaseRunTimes());
-		dispatch(fetchAppSettings());
 	};
 
 	return (
-		<PersistGate persistor={persistor} onBeforeLift={storeDidRehydrate}>
+		<>
 			<StatusBar
 				translucent
 				animated
@@ -61,6 +61,7 @@ const App = () => {
 				visible={progress.visible}
 				size="large"
 				text={progress.message}
+				palette={palette}
 			/>
 			<DropdownAlert
 				type={alert.type}
@@ -71,14 +72,13 @@ const App = () => {
 				statusBarColor={palette.header('status-bar')}
 				onDismiss={() => dispatch(clearAlert())}
 			/>
-		</PersistGate>
+		</>
 	);
 };
 
-export default () => {
-	return (
-		<Provider store={store}>
-			<App />
-		</Provider>
-	);
-};
+export default () => (
+	<Provider store={store}>
+		<App />
+	</Provider>
+)
+
