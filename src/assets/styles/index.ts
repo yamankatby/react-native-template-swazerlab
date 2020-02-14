@@ -22,11 +22,11 @@ export const usePalette = () => {
 	}, [theme, accentColor]);
 };
 
-export const useStyleSheet = <T>(sheetFactory: (tools: { theme: Theme, palette: Palette, locale: Locale }) => T) => {
+export const useStyleSheet = <T>(factory: (tools: { theme: Theme, palette: Palette, locale: Locale }) => T) => {
 	const theme = useTheme();
 	const palette = usePalette();
 	return useMemo(() => {
-		return sheetFactory({ theme, palette, locale });
+		return factory({ theme, palette, locale });
 	}, [palette]);
 };
 

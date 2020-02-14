@@ -3,7 +3,7 @@ import { Action, State } from './types';
 
 const initialState: State = {
 	theme: 'light',
-	accentColor: 'blue',
+	accentColor: 'red',
 };
 
 const settings: Reducer<State, Action> = (state = initialState, action) => {

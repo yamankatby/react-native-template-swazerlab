@@ -41,4 +41,8 @@ export default {
 	textTouchToCancel: 'Touch again to cancel the operation.',
 	actionAdd: 'Add',
 	actionPick: 'Pick',
+
+	titleMore: 'More',
+	titleSettings: 'Settings',
+	titleHelpCenter: 'Help Center',
 };

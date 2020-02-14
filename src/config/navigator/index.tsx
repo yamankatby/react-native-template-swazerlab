@@ -1,26 +1,54 @@
 import React, { useMemo } from 'react';
 import { Platform } from 'react-native';
-import { NavigationContainer } from '@react-navigation/native';
+import { DarkTheme, DefaultTheme, NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { createDrawerNavigator } from '@react-navigation/drawer';
-import Intro from '../../processes/Other/views/Intro';
-import More from '../../processes/Other/views/More';
-import TellFriend from '../../processes/Other/views/TellFriend';
-import TombRaider from '../../processes/Other/views/TombRaider';
-import SelectList from '../../processes/services/views/SelectList';
+import { usePalette, useTheme } from '../../assets/styles';
+
+import About from '../../processes/help/views/About';
+import HelpCenter from '../../processes/help/views/HelpCenter';
+import Intro from '../../processes/help/views/Intro';
+import More from '../../processes/help/views/More';
+import TellFriend from '../../processes/help/views/TellFriend';
+import TombRaider from '../../processes/help/views/TombRaider';
+
+import Register from '../../processes/auth/views/Register';
+import Login from '../../processes/auth/views/Login';
+import ResetPassword from '../../processes/auth/views/ResetPassword';
+
+import Profile from '../../processes/profile/views/Profile';
+import UpdateProfile from '../../processes/profile/views/UpdateProfile';
+import UpdatePassword from '../../processes/profile/views/UpdatePassword';
+
 import PointOnMap from '../../processes/services/views/PointOnMap';
-import HelpCenter from '../../processes/Help/views/HelpCenter';
-import About from '../../processes/Help/views/About';
-import Register from '../../processes/Auth/views/Register';
-import Login from '../../processes/Auth/views/Login';
-import ResetPassword from '../../processes/Auth/views/ResetPassword';
-import Profile from '../../processes/Profile/views/Profile';
-import UpdateProfile from '../../processes/Profile/views/UpdateProfile';
-import UpdatePassword from '../../processes/Profile/views/UpdatePassword';
-import Home from '../../processes/Home/views/Home';
+import SelectList from '../../processes/services/views/SelectList';
+
+import Home from '../../processes/home/views/Home';
+
+
+export type RouteName =
+	| 'About'
+	| 'HelpCenter'
+	| 'Intro'
+	| 'More'
+	| 'TellFriend'
+	| 'TombRaider'
+	| 'Register'
+	| 'Login'
+	| 'ResetPassword'
+	| 'Profile'
+	| 'UpdateProfile'
+	| 'UpdatePassword'
+	| 'PointOnMap'
+	| 'SelectList'
+	| 'Home';
+
 
 const AppNavigator = () => {
+	const theme = useTheme();
+	const palette = usePalette();
+
 	const Stack = useMemo(() => createStackNavigator(), []);
 	const BottomTab = useMemo(() => createBottomTabNavigator(), []);
 	const Drawer = useMemo(() => createDrawerNavigator(), []);
@@ -65,7 +93,10 @@ const AppNavigator = () => {
 	};
 
 	return (
-		<NavigationContainer>
+		<NavigationContainer theme={{
+			light: { ...DefaultTheme, colors: { ...DefaultTheme.colors, primary: palette.accent() } },
+			dark: { ...DarkTheme, colors: { ...DarkTheme.colors, primary: palette.accent() } },
+		}[theme]}>
 			<Stack.Navigator>
 				<Stack.Screen name={'MainScreen'} component={MainScreen} options={{ headerShown: false }} />
 				<Stack.Screen name={'Intro'} component={Intro} />

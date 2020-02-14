@@ -41,4 +41,8 @@ export default {
 	textTouchToCancel: 'İşlemi durdurmak için bir daha dokun.',
 	actionAdd: 'Ekle',
 	actionPick: 'Seç',
+
+	titleMore: 'Daha Fazla',
+	titleSettings: 'Ayarlar',
+	titleHelpCenter: 'Yardım Merkezi',
 };

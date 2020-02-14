@@ -14,8 +14,9 @@ import {
 	ProgressAction,
 } from './types';
 import { AppAction } from '../../../config/store/types';
-import { RouteName } from '../../../config/navigator/types';
 import language from '../../../assets/language';
+import { RouteName } from '../../../config/navigator';
+import navigationService from '../../../config/navigator/navigationService';
 
 export const showAlert = (type: AlertType, title: string, message?: string, duration?: number): AlertAction => ({
 	type: ActionTypes.show_alert,

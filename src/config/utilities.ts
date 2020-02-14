@@ -1,4 +1,5 @@
 import { Dimensions, Platform } from 'react-native';
+import _ from 'lodash';
 
 export function hasNotch() {
 	const dimen = Dimensions.get('window');
@@ -9,4 +10,12 @@ export function hasNotch() {
 		!Platform.isTVOS &&
 		(dimen.height >= 812 || dimen.width >= 812)
 	);
+}
+
+export function debounce<T extends (...args: any[]) => any>(func: T, duration: number = 1000, leading: boolean = true) {
+	return _.debounce(func, duration, { leading, trailing: !leading });
+}
+
+export function throttle(func: any, duration: number = 1000, leading: boolean = true) {
+	return _.throttle(func, duration, { leading, trailing: !leading });
 }

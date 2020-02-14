@@ -41,4 +41,8 @@ export default {
 	textTouchToCancel: 'انقر مرة أخرى لإلغاء العملية.',
 	actionAdd: 'إضافة',
 	actionPick: 'اختر',
+
+	titleMore: 'المزيد',
+	titleSettings: 'الإعدادات',
+	titleHelpCenter: 'مركز المساعدة',
 };
