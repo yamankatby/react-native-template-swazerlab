@@ -53,4 +53,7 @@ export default {
 	actionTellFriend: 'Arkadaşla Paylaş',
 	titleTellFriendMessage: 'Üstad Uygulaması',
 	textTellFriendMessage: 'Merhaba, Ben yüksek kaliteli eğitmenler bulmak için Üstad uygulamasını kullanıyorum ve onu seviyorum. Uygulamayı indirin ve onu bugün deneyin. Android ve iOS ta kullanabilirsiniz.\n\nFor Android: {0}\nFor iOS: {1}',
+
+	// SETTINGS
+	textDarkMode: 'Karanlık Modu',
 };

@@ -1,7 +1,7 @@
 import { Platform, StyleSheet } from 'react-native';
 import { useStyleSheet } from '../../../assets/styles';
 
-export const useMoreStyles = () => useStyleSheet(({ theme, palette }) => StyleSheet.create({
+export const useMoreStyles = () => useStyleSheet(({ palette }) => StyleSheet.create({
 	container: {
 		flex: 1,
 	},

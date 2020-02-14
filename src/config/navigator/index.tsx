@@ -111,7 +111,7 @@ const AppNavigator = () => {
 				<Stack.Screen name={'ResetPassword'} component={ResetPassword} />
 				<Stack.Screen name={'UpdateProfile'} component={UpdateProfile} />
 				<Stack.Screen name={'UpdatePassword'} component={UpdatePassword} />
-				<Stack.Screen name={'Settings'} component={UpdatePassword} />
+				<Stack.Screen name={'Settings'} component={Settings} />
 				<Stack.Screen name={'Profile'} component={Profile} />
 			</Stack.Navigator>
 		</NavigationContainer>

@@ -54,7 +54,11 @@ const App = () => {
 				translucent
 				animated
 				backgroundColor={palette.header('status-bar')}
-				barStyle={Platform.OS === 'ios' ? 'light-content' : 'dark-content'}
+				barStyle={
+					Platform.OS === 'ios'
+						? (theme === 'light' ? 'dark-content' : 'light-content')
+						: (theme === 'light' ? 'light-content' : 'dark-content')
+				}
 			/>
 			<AppNavigator />
 			<ProgressOverlay

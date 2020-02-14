@@ -53,4 +53,7 @@ export default {
 	actionTellFriend: 'أخبر صديقاً',
 	titleTellFriendMessage: 'تطبيق أستاذ',
 	textTellFriendMessage: 'مرحباً، من مدة وأنا استخدم تطبيق أستاذ للعثور على معلمين أكفياء، وأنصحك باستخدامه أيضاً. يمكنك تنزيل التطبيق وإلقاء نظرة عليه اليوم، التطبيق متوفر على كل من Android و iOS.\n\nAndroid: {0}\niOS: {1}',
+
+	// SETTINGS
+	textDarkMode: 'وضع الليلي',
 };

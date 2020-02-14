@@ -1,5 +1,5 @@
 import { Reducer } from 'redux';
-import { Action, State } from './types';
+import { Action, ActionTypes, State } from './types';
 
 const initialState: State = {
 	theme: 'light',
@@ -16,6 +16,11 @@ const initialState: State = {
 
 const settings: Reducer<State, Action> = (state = initialState, action) => {
 	switch (action.type) {
+		case ActionTypes.toggle_theme:
+			return {
+				...state,
+				theme: state.theme === 'light' ? 'dark' : 'light',
+			};
 		default:
 			return state;
 	}
