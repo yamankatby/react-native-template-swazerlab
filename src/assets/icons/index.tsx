@@ -2,11 +2,7 @@ import React from 'react';
 import { SvgProps } from 'react-native-svg';
 import { usePalette } from '../styles';
 
-import profile from './profile';
-
-const icons = {
-	profile,
-};
+const icons = {};
 
 export type IconName = keyof typeof icons;
 

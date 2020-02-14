@@ -4,6 +4,8 @@ import AsyncStorage from '@react-native-community/async-storage';
 
 import services from '../../processes/services/logic/reducers';
 import settings from '../../processes/settings/logic/reducer';
+import auth from '../../processes/auth/logic/reducers';
+import profile from '../../processes/profile/logic/reducers';
 
 const generateConfig = (reducer: any, key: string, whitelist?: string[], blacklist?: string[]) =>
 	persistReducer({
@@ -17,4 +19,6 @@ const generateConfig = (reducer: any, key: string, whitelist?: string[], blackli
 export default combineReducers({
 	services,
 	settings,
+	auth,
+	profile,
 });

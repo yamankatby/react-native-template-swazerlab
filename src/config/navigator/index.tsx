@@ -4,8 +4,8 @@ import { DarkTheme, DefaultTheme, NavigationContainer } from '@react-navigation/
 import { createStackNavigator } from '@react-navigation/stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { createDrawerNavigator } from '@react-navigation/drawer';
-import navigationService from './navigationService';
 import { usePalette, useTheme } from '../../assets/styles';
+import navigationService from './navigationService';
 
 import About from '../../processes/help/views/About';
 import HelpCenter from '../../processes/help/views/HelpCenter';
@@ -13,6 +13,7 @@ import Intro from '../../processes/help/views/Intro';
 import More from '../../processes/help/views/More';
 import TellFriend from '../../processes/help/views/TellFriend';
 import TombRaider from '../../processes/help/views/TombRaider';
+import Settings from '../../processes/settings/views/Settings';
 
 import Register from '../../processes/auth/views/Register';
 import Login from '../../processes/auth/views/Login';
@@ -26,7 +27,6 @@ import PointOnMap from '../../processes/services/views/PointOnMap';
 import SelectList from '../../processes/services/views/SelectList';
 
 import Home from '../../processes/home/views/Home';
-import Icon from '../../assets/icons';
 
 export type RouteName =
 	| 'About'
@@ -35,6 +35,7 @@ export type RouteName =
 	| 'More'
 	| 'TellFriend'
 	| 'TombRaider'
+	| 'Settings'
 	| 'Register'
 	| 'Login'
 	| 'ResetPassword'
@@ -78,19 +79,15 @@ const AppNavigator = () => {
 		if (Platform.OS === 'ios') {
 			return (
 				<BottomTab.Navigator>
-					<BottomTab.Screen name={'HomeScreen'} component={HomeScreen} options={{
-						tabBarIcon: ({ color, size }) =>
-							<Icon name={'profile'} tintColor={color} width={size} height={size} />,
-					}} />
-					<BottomTab.Screen name={'ProfileScreen'} component={ProfileScreen} />
-					<BottomTab.Screen name={'MoreScreen'} component={MoreScreen} />
+					<BottomTab.Screen name={'Home'} component={HomeScreen} />
+					<BottomTab.Screen name={'More'} component={MoreScreen} />
 				</BottomTab.Navigator>
 			);
 		} else {
 			return (
 				<Drawer.Navigator>
-					<Drawer.Screen name={'HomeScreen'} component={HomeScreen} />
-					<Drawer.Screen name={'ProfileScreen'} component={ProfileScreen} />
+					<Drawer.Screen name={'Home'} component={HomeScreen} />
+					<Drawer.Screen name={'Profile'} component={ProfileScreen} />
 				</Drawer.Navigator>
 			);
 		}
@@ -104,7 +101,7 @@ const AppNavigator = () => {
 				dark: { ...DarkTheme, colors: { ...DarkTheme.colors, primary: palette.accent() } },
 			}[theme]}>
 			<Stack.Navigator>
-				<Stack.Screen name={'MainScreen'} component={MainScreen} options={{ headerShown: false }} />
+				<Stack.Screen name={'Main'} component={MainScreen} options={{ headerShown: false }} />
 				<Stack.Screen name={'Intro'} component={Intro} />
 				<Stack.Screen name={'TellFriend'} component={TellFriend} />
 				<Stack.Screen name={'TombRaider'} component={TombRaider} />
@@ -117,6 +114,8 @@ const AppNavigator = () => {
 				<Stack.Screen name={'ResetPassword'} component={ResetPassword} />
 				<Stack.Screen name={'UpdateProfile'} component={UpdateProfile} />
 				<Stack.Screen name={'UpdatePassword'} component={UpdatePassword} />
+				<Stack.Screen name={'Settings'} component={UpdatePassword} />
+				<Stack.Screen name={'Profile'} component={Profile} />
 			</Stack.Navigator>
 		</NavigationContainer>
 	);
