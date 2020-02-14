@@ -1,7 +1,7 @@
 import React from 'react';
 import { Button, Text, View } from 'react-native';
 import { useDispatch } from '../../../config/store';
-import { showAlert, showProgress } from '../../services/logic/actions';
+import { navigate, showAlert, showProgress } from '../../services/logic/actions';
 
 const Home = () => {
 	const dispatch = useDispatch();
@@ -14,6 +14,11 @@ const Home = () => {
 			<Button title={'show progress'} onPress={() => {
 				dispatch(showProgress('sdljf'));
 			}} />
+
+			<Button title={'navigate'} onPress={() => {
+				dispatch(navigate('About'));
+			}} />
+
 		</View>
 	);
 };

@@ -4,6 +4,7 @@ import { DarkTheme, DefaultTheme, NavigationContainer } from '@react-navigation/
 import { createStackNavigator } from '@react-navigation/stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { createDrawerNavigator } from '@react-navigation/drawer';
+import navigationService from './navigationService';
 import { usePalette, useTheme } from '../../assets/styles';
 
 import About from '../../processes/help/views/About';
@@ -25,7 +26,6 @@ import PointOnMap from '../../processes/services/views/PointOnMap';
 import SelectList from '../../processes/services/views/SelectList';
 
 import Home from '../../processes/home/views/Home';
-
 
 export type RouteName =
 	| 'About'
@@ -93,10 +93,12 @@ const AppNavigator = () => {
 	};
 
 	return (
-		<NavigationContainer theme={{
-			light: { ...DefaultTheme, colors: { ...DefaultTheme.colors, primary: palette.accent() } },
-			dark: { ...DarkTheme, colors: { ...DarkTheme.colors, primary: palette.accent() } },
-		}[theme]}>
+		<NavigationContainer
+			ref={instance => navigationService.setTopLevelNavigator(instance)}
+			theme={{
+				light: { ...DefaultTheme, colors: { ...DefaultTheme.colors, primary: palette.accent() } },
+				dark: { ...DarkTheme, colors: { ...DarkTheme.colors, primary: palette.accent() } },
+			}[theme]}>
 			<Stack.Navigator>
 				<Stack.Screen name={'MainScreen'} component={MainScreen} options={{ headerShown: false }} />
 				<Stack.Screen name={'Intro'} component={Intro} />
