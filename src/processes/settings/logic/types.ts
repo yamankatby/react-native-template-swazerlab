@@ -10,4 +10,12 @@ export type Action = AppAction;
 export interface State {
 	theme: Theme;
 	accentColor: string;
+
+	websiteURL: string;
+	appStoreAndroidURL: string;
+	appStoreIosURL: string;
+	faqURL: string;
+	privacyPolicyURL: string;
+	serviceTermsURL: string;
+	supportTel: string;
 }

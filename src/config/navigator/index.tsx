@@ -11,7 +11,6 @@ import About from '../../processes/help/views/About';
 import HelpCenter from '../../processes/help/views/HelpCenter';
 import Intro from '../../processes/help/views/Intro';
 import More from '../../processes/help/views/More';
-import TellFriend from '../../processes/help/views/TellFriend';
 import TombRaider from '../../processes/help/views/TombRaider';
 import Settings from '../../processes/settings/views/Settings';
 
@@ -33,7 +32,6 @@ export type RouteName =
 	| 'HelpCenter'
 	| 'Intro'
 	| 'More'
-	| 'TellFriend'
 	| 'TombRaider'
 	| 'Settings'
 	| 'Register'
@@ -103,7 +101,6 @@ const AppNavigator = () => {
 			<Stack.Navigator>
 				<Stack.Screen name={'Main'} component={MainScreen} options={{ headerShown: false }} />
 				<Stack.Screen name={'Intro'} component={Intro} />
-				<Stack.Screen name={'TellFriend'} component={TellFriend} />
 				<Stack.Screen name={'TombRaider'} component={TombRaider} />
 				<Stack.Screen name={'SelectList'} component={SelectList} />
 				<Stack.Screen name={'PointOnMap'} component={PointOnMap} />

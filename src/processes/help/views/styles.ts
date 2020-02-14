@@ -6,19 +6,12 @@ export const useMoreStyles = () => useStyleSheet(({ theme, palette }) => StyleSh
 		flex: 1,
 	},
 	photoContainer: {
-		justifyContent: 'center',
-		alignItems: 'center',
 		width: 58,
 		height: 58,
-		marginVertical: 16,
+		marginVertical: 14,
 		marginStart: 14,
 		backgroundColor: palette.accent(),
 		borderRadius: (Platform.OS === 'ios' ? 14 : 50),
-	},
-	photoPlaceholder: {
-		fontSize: 26,
-		color: theme === 'light' ? 'white' : 'black',
-		fontWeight: '600',
 	},
 	email: {
 		fontSize: 16,

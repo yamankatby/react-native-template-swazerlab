@@ -51,4 +51,6 @@ export default {
 
 	// TELL FRIEND
 	actionTellFriend: 'Tell a Friend',
+	titleTellFriendMessage: 'Ustad App',
+	textTellFriendMessage: 'Hey There, I\'m using Ustad App to find high quality tutors and I love it. Download the App and give it a try today, It\'s available on both Android and iOS.\n\nFor Android: {0}\nFor iOS: {1}',
 };

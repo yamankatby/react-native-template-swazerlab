@@ -30,3 +30,29 @@ export function platform<I, A, F>(ios: I, android: A, fallback?: F) {
 			return fallback;
 	}
 }
+
+export const generateShareMessage = (title?: string, content?: string, url?: string) => {
+	let reVal = '';
+
+	if (title) {
+		reVal += title;
+
+		if (content || url) {
+			reVal += '\r\n\r\n';
+		}
+	}
+
+	if (content) {
+		reVal += content;
+
+		if (url) {
+			reVal += '\r\n\r\n';
+		}
+	}
+
+	if (url) {
+		reVal += url;
+	}
+
+	return reVal;
+};
