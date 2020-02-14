@@ -19,3 +19,14 @@ export function debounce<T extends (...args: any[]) => any>(func: T, duration: n
 export function throttle(func: any, duration: number = 1000, leading: boolean = true) {
 	return _.throttle(func, duration, { leading, trailing: !leading });
 }
+
+export function platform<I, A, F>(ios: I, android: A, fallback?: F) {
+	switch (Platform.OS) {
+		case 'ios':
+			return ios;
+		case 'android':
+			return android;
+		default:
+			return fallback;
+	}
+}

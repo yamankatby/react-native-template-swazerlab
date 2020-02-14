@@ -26,6 +26,7 @@ import PointOnMap from '../../processes/services/views/PointOnMap';
 import SelectList from '../../processes/services/views/SelectList';
 
 import Home from '../../processes/home/views/Home';
+import Icon from '../../assets/icons';
 
 export type RouteName =
 	| 'About'
@@ -77,7 +78,10 @@ const AppNavigator = () => {
 		if (Platform.OS === 'ios') {
 			return (
 				<BottomTab.Navigator>
-					<BottomTab.Screen name={'HomeScreen'} component={HomeScreen} />
+					<BottomTab.Screen name={'HomeScreen'} component={HomeScreen} options={{
+						tabBarIcon: ({ color, size }) =>
+							<Icon name={'profile'} tintColor={color} width={size} height={size} />,
+					}} />
 					<BottomTab.Screen name={'ProfileScreen'} component={ProfileScreen} />
 					<BottomTab.Screen name={'MoreScreen'} component={MoreScreen} />
 				</BottomTab.Navigator>
