@@ -45,4 +45,10 @@ export default {
 	titleMore: 'Daha Fazla',
 	titleSettings: 'Ayarlar',
 	titleHelpCenter: 'Yardım Merkezi',
+
+	// UPDATE PROFILE
+	titleUpdateProfile: 'Profili Düzenle',
+
+	// TELL FRIEND
+	actionTellFriend: 'Arkadaşla Paylaş',
 };

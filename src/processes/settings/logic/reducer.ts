@@ -2,8 +2,8 @@ import { Reducer } from 'redux';
 import { Action, State } from './types';
 
 const initialState: State = {
-	theme: 'dark',
-	accentColor: '#FF3B30',
+	theme: 'light',
+	accentColor: '#007AFF',
 };
 
 const settings: Reducer<State, Action> = (state = initialState, action) => {

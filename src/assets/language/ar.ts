@@ -45,4 +45,10 @@ export default {
 	titleMore: 'المزيد',
 	titleSettings: 'الإعدادات',
 	titleHelpCenter: 'مركز المساعدة',
+
+	// UPDATE PROFILE
+	titleUpdateProfile: 'تعديل الملف الشخصي',
+
+	// TELL FRIEND
+	actionTellFriend: 'أخبر صديقاً',
 };

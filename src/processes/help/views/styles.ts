@@ -11,10 +11,9 @@ export const useMoreStyles = () => useStyleSheet(({ theme, palette }) => StyleSh
 		width: 58,
 		height: 58,
 		marginVertical: 16,
-		marginStart: 16,
-		marginEnd: 2,
+		marginStart: 14,
 		backgroundColor: palette.accent(),
-		borderRadius: (Platform.OS === 'ios' ? 15 : 50),
+		borderRadius: (Platform.OS === 'ios' ? 14 : 50),
 	},
 	photoPlaceholder: {
 		fontSize: 26,

@@ -12,6 +12,7 @@ export interface ChangeDraftProfileNameAction extends AppAction {
 export interface Profile {
 	name: string;
 	email: string;
+	photoURL?: string;
 }
 
 export type Action =
@@ -22,4 +23,5 @@ export interface State {
 	draftProfile: Profile;
 	name: string;
 	email: string;
+	photoURL: string;
 }

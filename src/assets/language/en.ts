@@ -45,4 +45,10 @@ export default {
 	titleMore: 'More',
 	titleSettings: 'Settings',
 	titleHelpCenter: 'Help Center',
+
+	// UPDATE PROFILE
+	titleUpdateProfile: 'Edit Profile',
+
+	// TELL FRIEND
+	actionTellFriend: 'Tell a Friend',
 };

@@ -5,9 +5,11 @@ const initialState: State = {
 	draftProfile: {
 		name: '',
 		email: '',
+		photoURL: '',
 	},
 	name: 'Yaman KATBY',
 	email: 'm.yaman.katby@gmail.com',
+	photoURL: 'https://mir-s3-cdn-cf.behance.net/user/115/c65ec111471167.5d62a2d707a23.jpg',
 };
 
 const profile: Reducer<State, Action> = (state = initialState, action) => {
