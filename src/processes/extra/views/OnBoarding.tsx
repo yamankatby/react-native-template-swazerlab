@@ -1,12 +1,12 @@
 import React from 'react';
 import { Text, View } from 'react-native';
 
-const UpdateProfile = () => {
+const OnBoarding = () => {
 	return (
 		<View>
-			<Text>Hi, UpdateProfile Component!</Text>
+			<Text>Hi, OnBoarding Component!</Text>
 		</View>
 	);
 };
 
-export default UpdateProfile;
+export default OnBoarding;

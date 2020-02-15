@@ -1,94 +1,87 @@
 import { AppAction, AppResultAction } from '../../../config/store/types';
 
-
 export enum ActionTypes {
+	change_name = 'AUTH__CHANGE_NAME',
+	change_email = 'AUTH__CHANGE_EMAIL',
+	change_password = 'AUTH__CHANGE_PASSWORD',
+
 	login = 'AUTH__LOGIN',
 	login_result = 'AUTH__LOGIN_RESULT',
 
-	refresh_token = 'AUTH__REFRESH_TOKEN',
-	refresh_token_result = 'AUTH__REFRESH_TOKEN_RESULT',
+	register = 'AUTH__REGISTER',
+	register_result = 'AUTH__REGISTER_RESULT',
 
-	send_reset_email = 'AUTH__SEND_RESET_EMAIL',
-	send_reset_email_result = 'AUTH__SEND_RESET_EMAIL_RESULT',
-
-	reset_password = 'AUTH__RESET_PASSWORD',
-	reset_password_result = 'AUTH__RESET_PASSWORD_RESULT',
-
-	update_password = 'AUTH__UPDATE_PASSWORD',
-	update_password_result = 'AUTH__UPDATE_PASSWORD_RESULT',
-
-	change_email = 'AUTH__CHANGE_EMAIL',
-	change_password = 'AUTH__CHANGE_PASSWORD',
-	change_reset_code = 'AUTH__CHANGE_RESET_CODE',
 	change_old_password = 'AUTH__CHANGE_OLD_PASSWORD',
-
-	clear_data = 'Auth__CLEAR_DATA',
-
-	logout = 'AUTH__LOGOUT',
-	logout_result = 'AUTH__LOGOUT_RESULT',
+	change_is_resetting_password = 'AUTH__CHANGE_IS_RESETTING_PASSWORD',
+	change_reset_code = 'AUTH__CHANGE_RESET_CODE',
 }
 
-export interface LoginAction extends AppAction {
-	type: ActionTypes.login,
-	email: string,
-	password: string,
-}
-
-export interface TokenResultAction extends AppResultAction {
-	type: ActionTypes.login_result | ActionTypes.refresh_token_result,
-	accessToken?: string,
-	refreshToken?: string,
-}
-
-export interface SendEmailResultAction extends AppResultAction {
-	type: ActionTypes.send_reset_email_result,
-	code?: string,
+export interface ChangeNameAction extends AppAction {
+	type: ActionTypes.change_name;
+	name: string;
 }
 
 export interface ChangeEmailAction extends AppAction {
-	type: ActionTypes.change_email,
-	email: string,
+	type: ActionTypes.change_email;
+	email: string;
 }
 
 export interface ChangePasswordAction extends AppAction {
-	type: ActionTypes.change_password | ActionTypes.change_old_password,
-	password: string,
+	type: ActionTypes.change_password;
+	password: string;
+}
+
+export interface LoginResultAction extends AppResultAction {
+	type: ActionTypes.login_result;
+	accessToken?: string;
+}
+
+export interface RegisterResultAction extends AppResultAction {
+	type: ActionTypes.register_result;
+	accessToken?: string;
+}
+
+export interface ChangeOldPasswordAction extends AppAction {
+	type: ActionTypes.change_old_password;
+	oldPassword: string;
+}
+
+export interface ChangeIsResettingPasswordAction extends AppAction {
+	type: ActionTypes.change_is_resetting_password;
+	isResettingPassword: boolean;
 }
 
 export interface ChangeResetCodeAction extends AppAction {
-	type: ActionTypes.change_reset_code,
-	resetCode: string,
+	type: ActionTypes.change_reset_code;
+	resetCode: string;
 }
 
-export interface ClearDataAction extends AppAction {
-	type: ActionTypes.clear_data,
-	isSocialRegister: boolean,
-}
-
-export interface LogoutAction extends AppAction {
-	type: ActionTypes.logout,
-	force: boolean,
-}
+export type ExternalProvider = 'google' | 'facebook' | 'twitter' | 'linkedIn';
 
 export type Action =
+	& AppAction
+	& AppResultAction
+	& ChangeNameAction
 	& ChangeEmailAction
 	& ChangePasswordAction
-	& ChangeResetCodeAction
-	& LoginAction
-	& TokenResultAction
-	& LogoutAction
-	& AppResultAction
-	& AppAction;
+	& LoginResultAction
+	& RegisterResultAction
+	& ChangeOldPasswordAction
+	& ChangeIsResettingPasswordAction
+	& ChangeResetCodeAction;
 
 export interface State {
-	isLoggedIn: boolean,
-	accessToken?: string,
-	refreshToken?: string,
+	isLoggedIn: boolean;
+	accessToken: string;
 
-	email: string,
-	password: string,
-	oldPassword: string,
+	name: string;
+	email: string;
+	password: string;
 
-	isResettingPassword: boolean,
-	resetCode: string,
+	oldPassword: string;
+	isResettingPassword: boolean;
+	resetCode: string;
+
+	provider?: ExternalProvider;
+	providerToken?: string;
 }

@@ -1,29 +1,29 @@
+import { Reducer } from 'redux';
 import { Action, ActionTypes, State } from './types';
 
-const INITIAL_STATE: State = {
+const initialState: State = {
 	isLoggedIn: false,
-	accessToken: undefined,
-	refreshToken: undefined,
+	accessToken: '',
 
+	name: '',
 	email: '',
 	password: '',
-	oldPassword: '',
 
+	oldPassword: '',
 	isResettingPassword: false,
 	resetCode: '',
+
+	provider: undefined,
+	providerToken: undefined,
 };
 
-export default function (state: State = INITIAL_STATE, action: Action): State {
+const auth: Reducer<State, Action> = (state = initialState, action) => {
 	switch (action.type) {
-		case ActionTypes.clear_data:
+		case ActionTypes.change_name:
 			return {
 				...state,
-
-				password: '',
-				oldPassword: '',
-				resetCode: '',
+				name: action.name,
 			};
-
 		case ActionTypes.change_email:
 			return {
 				...state,
@@ -34,96 +34,34 @@ export default function (state: State = INITIAL_STATE, action: Action): State {
 				...state,
 				password: action.password,
 			};
+
+		case ActionTypes.login_result:
+		case ActionTypes.register_result:
+			if (action.hasError) return state;
+			return {
+				...state,
+				isLoggedIn: true,
+				accessToken: action.accessToken!,
+			};
+
+		case ActionTypes.change_old_password:
+			return {
+				...state,
+				oldPassword: action.oldPassword,
+			};
+		case ActionTypes.change_is_resetting_password:
+			return {
+				...state,
+				isResettingPassword: action.isResettingPassword,
+			};
 		case ActionTypes.change_reset_code:
 			return {
 				...state,
 				resetCode: action.resetCode,
 			};
-		case ActionTypes.change_old_password:
-			return {
-				...state,
-				oldPassword: action.password,
-			};
-
-		case ActionTypes.login_result:
-			if (action.hasError) {
-				return {
-					...state,
-					isLoggedIn: false,
-					password: '',
-				};
-			}
-			return {
-				...state,
-				email: '',
-				password: '',
-				isLoggedIn: true,
-				accessToken: action.accessToken || undefined,
-				refreshToken: action.refreshToken || undefined,
-			};
-
-		case ActionTypes.refresh_token_result:
-			if (action.hasError) {
-				return state;
-			}
-			return {
-				...state,
-				email: '',
-				password: '',
-				isLoggedIn: true,
-				accessToken: action.accessToken || undefined,
-				refreshToken: action.refreshToken || undefined,
-			};
-
-		case ActionTypes.send_reset_email_result:
-			if (action.hasError) {
-				return state;
-			}
-			return {
-				...state,
-				isResettingPassword: true,
-			};
-
-		case ActionTypes.reset_password_result:
-			if (action.hasError) {
-				return {
-					...state,
-					password: '',
-				};
-			}
-			return {
-				...state,
-				isResettingPassword: false,
-
-				password: '',
-				resetCode: '',
-			};
-
-		case ActionTypes.update_password_result:
-			if (action.hasError) {
-				return {
-					...state,
-					password: '',
-				};
-			}
-			return {
-				...state,
-
-				oldPassword: '',
-				password: '',
-			};
-
-		case ActionTypes.logout_result:
-			return {
-				...state,
-				isLoggedIn: false,
-				accessToken: '',
-
-				email: '',
-				password: '',
-			};
-
 		default:
 			return state;
 	}
-}
+};
+
+export default auth;

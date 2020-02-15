@@ -1,12 +1,12 @@
 import React from 'react';
 import { Text, View } from 'react-native';
 
-const PointOnMap = () => {
+const AboutUs = () => {
 	return (
 		<View>
-			<Text>Hi, PointOnMap Component!</Text>
+			<Text>Hi, AboutUs Component!</Text>
 		</View>
 	);
 };
 
-export default PointOnMap;
+export default AboutUs;
