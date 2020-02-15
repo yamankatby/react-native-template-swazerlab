@@ -44,16 +44,37 @@ export default {
 
 	titleMore: 'More',
 	titleSettings: 'Settings',
-	titleHelpCenter: 'Help Center',
 
 	// UPDATE PROFILE
 	titleUpdateProfile: 'Edit Profile',
 
-	// TELL FRIEND
-	actionTellFriend: 'Tell a Friend',
-	titleTellFriendMessage: 'Ustad App',
-	textTellFriendMessage: 'Hey There, I\'m using Ustad App to find high quality tutors and I love it. Download the App and give it a try today, It\'s available on both Android and iOS.\n\nFor Android: {0}\nFor iOS: {1}',
-
 	// SETTINGS
 	textDarkMode: 'Dark Mode',
+
+	// About
+	titleAbout: 'About',
+	textAboutSubtitle: 'Whatever stage of education, Ustad helps you find the tutoring you need to take the next step in learning.',
+	textAboutNameTitle: 'Ustad App',
+	textAboutNameSubtitle: '©2018 Ustad.',
+	textAboutDescriptionTitle: 'Who are we?',
+	textAboutDescriptionSubtitle: 'Ustad Ltd. was established in 2018 with the goal of serving the people who want to make and manage their education easier and more efficient.',
+	textAboutWebsiteTitle: 'Our website',
+	textAboutVersionTitle: 'Application version',
+
+	// HELP CENTER
+	titleHelpCenter: 'Help Center',
+	textHelpCenter: 'Welcome to The Help Center',
+	textNeedHelp: 'Welcome to the help center. Here you can check out all kind of information and questions regarding our services. Please read the FAQ section before contacting us or sending a complaint.',
+	actionFAQ: 'Frequently Asked Questions',
+	actionPrivacyPolicy: 'Privacy Policy',
+	actionServiceTerms: 'Terms of Service',
+	actionTellFriend: 'Tell a Friend',
+	actionContactUs: 'Contact Us',
+	actionFollowUs: 'Follow Us',
+	titleContactUs: 'Contact Us',
+	questionContactUs: 'How would you like to get in touch with us?',
+	actionPhone: 'Phone',
+	actionEmail: 'Email',
+	titleTellFriendMessage: 'Ustad App',
+	textTellFriendMessage: 'Hey There, I\'m using Ustad App to find high quality tutors and I love it. Download the App and give it a try today, It\'s available on both Android and iOS.\n\nFor Android: {0}\nFor iOS: {1}',
 };

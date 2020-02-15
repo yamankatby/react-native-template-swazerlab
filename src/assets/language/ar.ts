@@ -44,16 +44,37 @@ export default {
 
 	titleMore: 'المزيد',
 	titleSettings: 'الإعدادات',
-	titleHelpCenter: 'مركز المساعدة',
 
 	// UPDATE PROFILE
 	titleUpdateProfile: 'تعديل الملف الشخصي',
 
-	// TELL FRIEND
-	actionTellFriend: 'أخبر صديقاً',
-	titleTellFriendMessage: 'تطبيق أستاذ',
-	textTellFriendMessage: 'مرحباً، من مدة وأنا استخدم تطبيق أستاذ للعثور على معلمين أكفياء، وأنصحك باستخدامه أيضاً. يمكنك تنزيل التطبيق وإلقاء نظرة عليه اليوم، التطبيق متوفر على كل من Android و iOS.\n\nAndroid: {0}\niOS: {1}',
-
 	// SETTINGS
 	textDarkMode: 'وضع الليلي',
+
+	// About
+	titleAbout: 'نبذة عن أستاذ',
+	textAboutSubtitle: 'لا داعي لإضاعة الكثير من الوقت والجهد للعثور على مدرسك المفضل، باستخدام تطبيق أستاذ يمكن تحقيق ذلك بضغطة زر واحدة.',
+	textAboutNameTitle: 'تطبيق أستاذ',
+	textAboutNameSubtitle: '©2018 أستاذ.',
+	textAboutDescriptionTitle: 'من نحن؟',
+	textAboutDescriptionSubtitle: 'شركة أستاذ هي شركة تأسست في سنة 2018 بهدف تقديم طريقة سهلة وبسيطة للمستخدمين الذين يريدون جعل حياتهم التعليمية أسهل واكثر فعالية.',
+	textAboutWebsiteTitle: 'موقعنا',
+	textAboutVersionTitle: 'إصدار التطبيق',
+
+	// HELP CENTER
+	titleHelpCenter: 'مركز المساعدة',
+	textHelpCenter: 'مرحباً بك في مركز المساعدة',
+	textNeedHelp: 'مرحباً بك في مركز المساعدة، يمكنك هنا الاطلاع على جميع المعلومات والأسئلة المتعلقة بخدماتنا، يرجى قراءة قسم الأسئلة المتكررة قبل الاتصال أو إرسال شكوى.',
+	actionFAQ: 'الأسئلة المتكررة',
+	actionPrivacyPolicy: 'سياسة الخصوصية',
+	actionServiceTerms: 'شروط استخدام الخدمة',
+	actionTellFriend: 'أخبر صديقاً',
+	actionContactUs: 'اتصل بنا',
+	actionFollowUs: 'قم بمتابعتنا',
+	titleContactUs: 'اتصل بنا',
+	questionContactUs: 'كيف تود الاتصال بنا؟',
+	actionPhone: 'الهاتف',
+	actionEmail: 'البريد الإلكتروني',
+	titleTellFriendMessage: 'تطبيق أستاذ',
+	textTellFriendMessage: 'مرحباً، من مدة وأنا استخدم تطبيق أستاذ للعثور على معلمين أكفياء، وأنصحك باستخدامه أيضاً. يمكنك تنزيل التطبيق وإلقاء نظرة عليه اليوم، التطبيق متوفر على كل من Android و iOS.\n\nAndroid: {0}\niOS: {1}',
 };

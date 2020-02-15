@@ -17,3 +17,26 @@ export const useMoreStyles = () => useStyleSheet(({ palette }) => StyleSheet.cre
 		fontSize: 16,
 	},
 }));
+
+export const useHelpCenterStyles = () => useStyleSheet(({ palette }) => StyleSheet.create({
+	container: {
+		flex: 1,
+	},
+	title: {
+		fontSize: 24,
+		color: palette.accent(),
+		textAlign: 'center',
+		marginTop: 46,
+	},
+	text: {
+		fontSize: 15,
+		color: palette.darken(4).hex(),
+		textAlign: 'center',
+		marginVertical: 10,
+		marginHorizontal: 14,
+	},
+	infoContainer: {
+		marginTop: 10,
+		opacity: 0.95,
+	},
+}));

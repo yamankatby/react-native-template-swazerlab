@@ -49,15 +49,15 @@ const More = () => {
 			</Section>
 			<Section header={language.titleMore} separatorInsetLeft={54}>
 				<StaticCell
+					title={language.actionTellFriend}
+					iconComponent={<Icon name={'tellFriend'} />}
+					onPress={onTellFriendTouched}
+				/>
+				<StaticCell
 					title={language.titleHelpCenter}
 					accessory={'disclosure'}
 					iconComponent={<Icon name={'info'} />}
 					onPress={() => dispatch(navigate('HelpCenter'))}
-				/>
-				<StaticCell
-					title={language.actionTellFriend}
-					iconComponent={<Icon name={'tellFriend'} />}
-					onPress={onTellFriendTouched}
 				/>
 			</Section>
 		</Table>

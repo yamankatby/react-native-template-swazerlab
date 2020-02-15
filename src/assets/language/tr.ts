@@ -44,16 +44,37 @@ export default {
 
 	titleMore: 'Daha Fazla',
 	titleSettings: 'Ayarlar',
-	titleHelpCenter: 'Yardım Merkezi',
 
 	// UPDATE PROFILE
 	titleUpdateProfile: 'Profili Düzenle',
 
-	// TELL FRIEND
-	actionTellFriend: 'Arkadaşla Paylaş',
-	titleTellFriendMessage: 'Üstad Uygulaması',
-	textTellFriendMessage: 'Merhaba, Ben yüksek kaliteli eğitmenler bulmak için Üstad uygulamasını kullanıyorum ve onu seviyorum. Uygulamayı indirin ve onu bugün deneyin. Android ve iOS ta kullanabilirsiniz.\n\nFor Android: {0}\nFor iOS: {1}',
-
 	// SETTINGS
 	textDarkMode: 'Karanlık Modu',
+
+	// About
+	titleAbout: 'Hakkımızda',
+	textAboutSubtitle: 'Eğitiminiz hangi aşamada olursa olsun, Üstad öğrenmede bir sonraki adımı atmanız için ihtiyacınız olan eğitmeni bulmanıza yardımcı olur.',
+	textAboutNameTitle: 'Üstad Uygulaması',
+	textAboutNameSubtitle: '©2018 Üstad.',
+	textAboutDescriptionTitle: 'Biz kimiz?',
+	textAboutDescriptionSubtitle: 'Üstad Ltd., eğitimini daha kolay ve verimli hale getirmek isteyen insanlara hizmet vermek amacıyla 2018 yılında kuruldu.',
+	textAboutWebsiteTitle: 'Websitemiz',
+	textAboutVersionTitle: 'Uygulama versiyonu',
+
+	// HELP CENTER
+	titleHelpCenter: 'Yardım Merkezi',
+	textHelpCenter: 'Yardım Merkezine hoşgeldiniz',
+	textNeedHelp: 'Yardım merkezine hoşgeldiniz, Burada hizmetlerimizle ilgili her türlü bilgi ve soruları kontrol edebilirsiniz. Lütfen bizimle iletişime geçmeden veya bir şikayet göndermeden önce sıkça sorulan soruları okuyunuz.',
+	actionFAQ: 'Sıkça sorulan sorular',
+	actionPrivacyPolicy: 'Gizlilik Politikası',
+	actionServiceTerms: 'Hizmet Koşulları',
+	actionTellFriend: 'Arkadaşla Paylaş',
+	actionContactUs: 'Bize Ulaş',
+	actionFollowUs: 'Bizi takip et',
+	titleContactUs: 'Bize Ulaşın',
+	questionContactUs: 'Bizimle nasıl iletişime geçmek istersiniz?',
+	actionPhone: 'Telefon',
+	actionEmail: 'Email',
+	titleTellFriendMessage: 'Üstad Uygulaması',
+	textTellFriendMessage: 'Merhaba, Ben yüksek kaliteli eğitmenler bulmak için Üstad uygulamasını kullanıyorum ve onu seviyorum. Uygulamayı indirin ve onu bugün deneyin. Android ve iOS ta kullanabilirsiniz.\n\nFor Android: {0}\nFor iOS: {1}',
 };
