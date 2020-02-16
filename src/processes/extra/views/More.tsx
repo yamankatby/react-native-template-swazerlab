@@ -8,8 +8,11 @@ import { usePalette, useTheme } from '../../../assets/styles';
 import { useMoreStyles } from './styles';
 import language from '../../../assets/language';
 import { generateShareMessage } from '../../../config/utilities';
+import { useScreenTracker } from '../../../config/firebase';
 
 const More = () => {
+	useScreenTracker('More');
+
 	const dispatch = useDispatch();
 	const theme = useTheme();
 	const palette = usePalette();

@@ -5,8 +5,11 @@ import { useSettingsStyles } from './styles';
 import { useDispatch } from '../../../config/store';
 import { toggleTheme } from '../logic/actions';
 import language from '../../../assets/language';
+import { useScreenTracker } from '../../../config/firebase';
 
 const Settings = () => {
+	useScreenTracker('Settings');
+
 	const dispatch = useDispatch();
 	const theme = useTheme();
 	const palette = usePalette();

@@ -13,6 +13,8 @@ import AppNavigator from './config/navigator';
 import ProgressOverlay from './components/Progress/ProgressOverlay';
 import DropdownAlert from './components/Alert/DropdownAlert';
 
+import './config/firebase';
+
 const App = () => {
 	const dispatch = useDispatch();
 	const alert = useSelector(x => x.services.alert);

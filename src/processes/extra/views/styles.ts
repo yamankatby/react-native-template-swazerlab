@@ -30,7 +30,7 @@ export const useHelpCenterStyles = () => useStyleSheet(({ palette }) => StyleShe
 	},
 	text: {
 		fontSize: 15,
-		color: palette.darken(4).hex(),
+		color: palette.text(),
 		textAlign: 'center',
 		marginVertical: 10,
 		marginHorizontal: 14,

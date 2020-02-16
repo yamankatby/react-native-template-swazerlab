@@ -7,8 +7,11 @@ import { navigate } from '../../services/logic/actions';
 import { usePalette, useTheme } from '../../../assets/styles';
 import { useHelpCenterStyles } from './styles';
 import language from '../../../assets/language';
+import { useScreenTracker } from '../../../config/firebase';
 
 const HelpCenter = () => {
+	useScreenTracker('HelpScreen');
+
 	const dispatch = useDispatch();
 	const theme = useTheme();
 	const palette = usePalette();
@@ -101,7 +104,7 @@ const HelpCenter = () => {
 							title={language.titleAbout}
 							accessory="disclosure"
 							hideAccessorySeparator
-							onPress={() => dispatch(navigate('About'))}
+							onPress={() => dispatch(navigate('AboutUs'))}
 						/>
 					</Section>
 				</Table>

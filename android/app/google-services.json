@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "132034152091",
+    "firebase_url": "https://react-native-template-9ce6c.firebaseio.com",
+    "project_id": "react-native-template-9ce6c",
+    "storage_bucket": "react-native-template-9ce6c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:132034152091:android:5c0755e7256972acd0e83e",
+        "android_client_info": {
+          "package_name": "com.rntemplate"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "132034152091-kpfiqs9qrvrf151toddbqse3jseiprgj.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA7FuzPecpZKm9DgI8wkVF8SKqFrtDfZUo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "132034152091-kpfiqs9qrvrf151toddbqse3jseiprgj.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "132034152091-mctpqmresvd9m89k529sfeiu5njac56k.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "org.reactjs.native.example.RNTemplate"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
