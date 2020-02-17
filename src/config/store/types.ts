@@ -16,7 +16,7 @@ export interface AppState {
 
 export interface AppAction extends ReduxAction<AppActionTypes> {
 	silent?: boolean;
-	firebase?: 'event' | 'navigate';
+	firebase?: boolean | object;
 }
 
 export interface AppResultAction extends AppAction {

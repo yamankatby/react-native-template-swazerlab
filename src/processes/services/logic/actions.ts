@@ -61,7 +61,6 @@ export const navigate = (routeName: RouteName, params?: any): NavigateAction => 
 	navigationService.navigate(routeName, params);
 	return {
 		type: ActionTypes.navigate,
-		firebase: 'navigate',
 		routeName,
 		params,
 	};
@@ -70,7 +69,6 @@ export const replace = (routeName: RouteName, params?: any): NavigateAction => {
 	navigationService.replace(routeName, params);
 	return {
 		type: ActionTypes.replace,
-		firebase: 'navigate',
 		routeName,
 		params,
 	};
@@ -79,7 +77,6 @@ export const goBack = (): AppAction => {
 	navigationService.goBack();
 	return {
 		type: ActionTypes.go_back,
-		firebase: 'navigate',
 	};
 };
 export const popToTop = (): AppAction => {

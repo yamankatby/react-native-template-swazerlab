@@ -3,12 +3,13 @@ import { TypedUseSelectorHook, useDispatch as useReduxDispatch, useSelector as u
 import { persistStore } from 'redux-persist';
 import { createLogger } from 'redux-logger';
 import createSagaMiddleware from 'redux-saga';
+import { firebaseEventsMiddleware } from '../firebase';
 import { AppAction, AppState } from './types';
 import reducers from './reducers';
 import rootSaga from './sagas';
 
 const sagaMiddleware = createSagaMiddleware();
-const middlewares: Middleware[] = [sagaMiddleware];
+const middlewares: Middleware[] = [sagaMiddleware, firebaseEventsMiddleware];
 if (__DEV__) {
 	middlewares.push(
 		createLogger({

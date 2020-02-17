@@ -1,6 +1,6 @@
 import { AppStateStatus } from 'react-native';
+import { RouteName } from '../../../config/navigator';
 import { AppAction, AppResultAction } from '../../../config/store/types';
-import { RouteName } from '../../../config/navigator/types';
 import { AlertType } from '../../../components/Alert/DropdownAlert';
 
 export enum ActionTypes {
