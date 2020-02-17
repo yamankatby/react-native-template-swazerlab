@@ -858,7 +858,7 @@
   resolved "https://registry.yarnpkg.com/@react-native-community/netinfo/-/netinfo-5.3.3.tgz#2e627456d83c1d75d4c43ab6cef70fe125b9691d"
   integrity sha512-L4BsdIEEuG5rKkVNzjESdJ1wvusn0kflj/FrwctaW+xkLxiFs1+mdBg/mvqqfXvVFuBEphbyXJTFT4aG4Okkow==
 
-"@react-native-firebase/analytics@^6.0.0":
+"@react-native-firebase/analytics@^6.3.3":
   version "6.3.3"
   resolved "https://registry.yarnpkg.com/@react-native-firebase/analytics/-/analytics-6.3.3.tgz#492e07f1fc5287a71af0d1b01bb76898b700ea2e"
   integrity sha512-LmUALDevlPxF3Uyr33eH2uB6pHusLZef/0B+kzEKWQQgRPIDRVtrsKCvRK3aTfTlAEk5kYKyOV2pkgZZuaODzA==
@@ -868,7 +868,7 @@
   resolved "https://registry.yarnpkg.com/@react-native-firebase/app-types/-/app-types-6.3.3.tgz#aec56053ee0db8269153027f469a00af6553633c"
   integrity sha512-OW4ssR/Q5EA68bjPgyYulFYRr0bpNRQ/8CuCWI+lkpdQuKFN3RM5VAiU3WmLf/fz6ofSL+4BIEqrH+8aqygCpA==
 
-"@react-native-firebase/app@^6.0.0":
+"@react-native-firebase/app@^6.3.3":
   version "6.3.3"
   resolved "https://registry.yarnpkg.com/@react-native-firebase/app/-/app-6.3.3.tgz#65fbc4f82b9467bfd6e7d2f45ee90c3e194bf42a"
   integrity sha512-wlSgXGtJahuakFL1j7KT4o2x3q6F/DTPSNpW9EPNXdfxxMMTwDBbK3Oap9qKt6OiZqNpCrCmtdvCnM485E6kBw==
@@ -877,14 +877,14 @@
     opencollective-postinstall "^2.0.1"
     superstruct "^0.6.2"
 
-"@react-native-firebase/crashlytics@^6.0.0":
+"@react-native-firebase/crashlytics@^6.3.3":
   version "6.3.3"
   resolved "https://registry.yarnpkg.com/@react-native-firebase/crashlytics/-/crashlytics-6.3.3.tgz#e46a628cf04e3ae9d3f617423f7097717c5b532f"
   integrity sha512-5x2J0cNwemBcINVCVtnHj1r4pqZZUEZY4dUUdM94J4hfsN+6iqtatBmaiR/qrSzqiiaJnpAQGlEn+gBZoo/YTQ==
   dependencies:
     stacktrace-js "^2.0.0"
 
-"@react-native-firebase/remote-config@^6.0.0":
+"@react-native-firebase/remote-config@^6.3.3":
   version "6.3.3"
   resolved "https://registry.yarnpkg.com/@react-native-firebase/remote-config/-/remote-config-6.3.3.tgz#6e621e784087ceffc11692106ff6f8355cbb8183"
   integrity sha512-E7bcyx5GnGZMRbQfyRizMfKmnCW4OWxAQQp4AKLCQ8AgXNmhOj2JgOVef6LdYujYSib5lsgJZPDl+uNcr2nowg==
