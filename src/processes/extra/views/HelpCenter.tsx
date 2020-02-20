@@ -8,6 +8,8 @@ import { usePalette, useTheme } from '../../../assets/styles';
 import { useHelpCenterStyles } from './styles';
 import language from '../../../assets/language';
 import { useScreenTracker } from '../../../config/firebase';
+import { NativeButton } from '../../../components';
+import Fab from '../../../components/Fab/Fab';
 
 const HelpCenter = () => {
 	useScreenTracker('HelpScreen');
@@ -50,6 +52,7 @@ const HelpCenter = () => {
 	return (
 		<View style={styles.container}>
 			<ScrollView>
+				<NativeButton title={'slł'} />
 				<TouchableWithoutFeedback onPress={onTitleTouched}>
 					<View>
 						<Text style={styles.title}>{language.textHelpCenter}</Text>
@@ -109,6 +112,7 @@ const HelpCenter = () => {
 					</Section>
 				</Table>
 			</ScrollView>
+			<Fab iconComponent={(<View style={{ width: 40, height: 40, backgroundColor: 'red' }} />)} />
 		</View>
 	);
 };

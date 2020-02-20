@@ -60,6 +60,7 @@ const MainScreen = () =>
 	) : (
 		<Drawer.Navigator>
 			<Drawer.Screen name={'Profile'} component={ProfileScreen} />
+			<Drawer.Screen name={'HelpCenter'} component={HelpCenter} />
 		</Drawer.Navigator>
 	);
 
