@@ -94,28 +94,28 @@
 //
 
 import React from 'react';
-import { StatusBar, StyleSheet, Text, View } from 'react-native';
-import { ThemeProvider, useIsDark, useStyleSheet } from './@react-native-elements/kit';
+import { View } from 'react-native';
+import { ThemeProvider } from './@react-native-elements/kit';
+import Button from './@react-native-elements/button';
 
 const App = () => {
-	const isDark = useIsDark();
-	const styles = useStyleSheet(({ palette, font }) => StyleSheet.create({
-		container: {
-			flex: 1,
-			justifyContent: 'center',
-			alignItems: 'center',
-			backgroundColor: palette.background(),
-		},
-		text: {
-			color: palette.accent(),
-			...font.bold,
-		},
-	}));
-
 	return (
-		<View style={styles.container}>
-			<StatusBar translucent barStyle={isDark ? 'light-content' : 'dark-content'} />
-			<Text style={styles.text}>Home</Text>
+		<View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+			<Button title={'Button'} variant="contained" />
+			<Button title={'Button'} variant="outlined" />
+			<Button title={'Button'} variant="text" />
+
+			<Button title={'Button'} variant="contained" disabled />
+			<Button title={'Button'} variant="outlined" disabled />
+			<Button title={'Button'} variant="text" disabled />
+
+			<Button title={'Button'} variant="contained" loading />
+			<Button title={'Button'} variant="outlined" loading />
+			<Button title={'Button'} variant="text" loading />
+
+			<Button title={'Button'} variant="contained" disabled loading />
+			<Button title={'Button'} variant="outlined" disabled loading />
+			<Button title={'Button'} variant="text" disabled loading />
 		</View>
 	);
 };

@@ -54,7 +54,7 @@ const MoreScreen = () => (
 );
 const MainScreen = () =>
 	Platform.OS === 'ios' ? (
-		<BottomTab.Navigator>
+		<BottomTab.Navigator >
 			<BottomTab.Screen name={'More'} component={MoreScreen} />
 		</BottomTab.Navigator>
 	) : (

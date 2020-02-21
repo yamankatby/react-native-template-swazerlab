@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useMemo } from 'react';
+import React, { createContext, DependencyList, useContext, useMemo } from 'react';
 import { Platform } from 'react-native';
 import chroma from 'chroma-js';
 
@@ -8,6 +8,13 @@ export interface Theme {
 	isDark: boolean;
 	direction: Direction;
 	font: Font;
+}
+
+export interface ThemeProps {
+	accent?: string;
+	isDark?: boolean;
+	direction?: Direction;
+	font?: Font;
 }
 
 export interface Font {
@@ -53,15 +60,7 @@ export const DefaultTheme: Theme = {
 export const ThemeContext = createContext<Theme>(DefaultTheme);
 
 // CONTEXT PROVIDER
-interface Props {
-	accent?: string;
-	isDark?: boolean;
-	direction?: Direction;
-	font?: Font;
-	children?: any;
-}
-
-export const ThemeProvider = (props: Props) => {
+export const ThemeProvider = (props: ThemeProps & { children: any }) => {
 	const { children, ...rest } = props;
 	const theme = useMemo(() => ({ ...DefaultTheme, ...rest }), [rest]);
 	return <ThemeContext.Provider value={theme}>{children}</ThemeContext.Provider>;
@@ -80,10 +79,11 @@ export const usePalette = () => {
 
 export const useStyleSheet = function <T>(
 	factory: (tools: { palette: Palette; isDark: boolean; direction: Direction; font: Font }) => T,
+	deps: DependencyList = [],
 ) {
 	const { direction, isDark, font } = useTheme();
 	const palette = usePalette();
-	return useMemo(() => factory({ palette, isDark, direction, font }), [factory, palette, isDark, direction, font]);
+	return useMemo(() => factory({ palette, isDark, direction, font }), [palette, isDark, direction, font, ...deps]);
 };
 
 // PALETTE

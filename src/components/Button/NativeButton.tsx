@@ -38,8 +38,7 @@ const NativeButton = (props: Props) => {
 			<View style={[styles.innerContainer, props.innerStyle]}>
 				<Touchable onPress={onPress} disabled={disabled} {...touchableProps}>
 					<View style={styles.button(height, colorPalette.background)}>
-						<Text
-							style={[styles.title(disabled ? colorPalette.disabled : colorPalette.text), props.titleStyle]}>{title}</Text>
+						<Text style={[styles.title(disabled ? colorPalette.disabled : colorPalette.text), props.titleStyle]}>{title}</Text>
 					</View>
 				</Touchable>
 			</View>
