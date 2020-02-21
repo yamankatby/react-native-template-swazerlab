@@ -96,26 +96,14 @@
 import React from 'react';
 import { View } from 'react-native';
 import { ThemeProvider } from './@react-native-elements/kit';
-import Button from './@react-native-elements/button';
+import TextInput from './@react-native-elements/text-input';
 
 const App = () => {
 	return (
-		<View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-			<Button title={'Button'} variant="contained" />
-			<Button title={'Button'} variant="outlined" />
-			<Button title={'Button'} variant="text" />
-
-			<Button title={'Button'} variant="contained" disabled />
-			<Button title={'Button'} variant="outlined" disabled />
-			<Button title={'Button'} variant="text" disabled />
-
-			<Button title={'Button'} variant="contained" loading />
-			<Button title={'Button'} variant="outlined" loading />
-			<Button title={'Button'} variant="text" loading />
-
-			<Button title={'Button'} variant="contained" disabled loading />
-			<Button title={'Button'} variant="outlined" disabled loading />
-			<Button title={'Button'} variant="text" disabled loading />
+		<View style={{ flex: 1, justifyContent: 'center' }}>
+			<TextInput
+				placeholder={'Email'}
+			/>
 		</View>
 	);
 };
