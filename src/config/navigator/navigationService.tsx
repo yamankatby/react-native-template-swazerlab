@@ -13,10 +13,12 @@ const getTopLevelNavigator = () => {
 
 const navigate = debounce((routeName: RouteName, params?: object) => {
 	if (!_navigator) return;
-	_navigator.dispatch(CommonActions.navigate({
-		name: routeName,
-		params,
-	}));
+	_navigator.dispatch(
+		CommonActions.navigate({
+			name: routeName,
+			params,
+		}),
+	);
 });
 const goBack = debounce(() => {
 	if (!_navigator) return;

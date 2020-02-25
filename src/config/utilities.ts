@@ -1,26 +1,23 @@
-import { Dimensions, Platform } from 'react-native';
+import { Platform } from 'react-native';
 import _ from 'lodash';
 
-export function hasNotch() {
-	const dimen = Dimensions.get('window');
+export const debounce = <T extends (...args: any[]) => any>(
+	func: T,
+	duration: number = 1000,
+	leading: boolean = true,
+) =>
+	_.debounce(func, duration, {
+		leading,
+		trailing: !leading,
+	});
 
-	return (
-		Platform.OS === 'ios' &&
-		!Platform.isPad &&
-		!Platform.isTVOS &&
-		(dimen.height >= 812 || dimen.width >= 812)
-	);
-}
+export const throttle = (func: any, duration: number = 1000, leading: boolean = true) =>
+	_.throttle(func, duration, {
+		leading,
+		trailing: !leading,
+	});
 
-export function debounce<T extends (...args: any[]) => any>(func: T, duration: number = 1000, leading: boolean = true) {
-	return _.debounce(func, duration, { leading, trailing: !leading });
-}
-
-export function throttle(func: any, duration: number = 1000, leading: boolean = true) {
-	return _.throttle(func, duration, { leading, trailing: !leading });
-}
-
-export function platform<I, A, F>(ios: I, android: A, fallback?: F) {
+export const platform = <I, A, F>(ios: I, android: A, fallback?: F) => {
 	switch (Platform.OS) {
 		case 'ios':
 			return ios;
@@ -29,30 +26,4 @@ export function platform<I, A, F>(ios: I, android: A, fallback?: F) {
 		default:
 			return fallback;
 	}
-}
-
-export const generateShareMessage = (title?: string, content?: string, url?: string) => {
-	let reVal = '';
-
-	if (title) {
-		reVal += title;
-
-		if (content || url) {
-			reVal += '\r\n\r\n';
-		}
-	}
-
-	if (content) {
-		reVal += content;
-
-		if (url) {
-			reVal += '\r\n\r\n';
-		}
-	}
-
-	if (url) {
-		reVal += url;
-	}
-
-	return reVal;
 };
