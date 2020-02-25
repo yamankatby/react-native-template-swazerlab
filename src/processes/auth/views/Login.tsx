@@ -3,6 +3,7 @@ import { Button, Text, TextInput, View } from 'react-native';
 import { useScreenTracker } from '../../../config/firebase';
 import { useDispatch } from '../../../config/store';
 import { changeEmail, changePassword, login } from '../logic/actions';
+import { navigate } from '../../services/logic/actions';
 
 const Login = () => {
 	useScreenTracker('Login');
@@ -18,10 +19,10 @@ const Login = () => {
 		dispatch(login());
 	}, []);
 	const onRegisterTouched = useCallback(() => {
-
+		dispatch(navigate('Register'));
 	}, []);
 	const onResetPasswordTouched = useCallback(() => {
-
+		dispatch(navigate('ResetPassword'));
 	}, []);
 
 	return (

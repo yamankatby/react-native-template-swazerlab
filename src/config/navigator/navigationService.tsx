@@ -20,24 +20,22 @@ const navigate = debounce((routeName: RouteName, params?: object) => {
 		}),
 	);
 });
-const goBack = debounce(() => {
-	if (!_navigator) return;
-	_navigator.dispatch(CommonActions.goBack());
-});
-const setParams = debounce((params: object) => {
-	if (!_navigator) return;
-	_navigator.dispatch(CommonActions.setParams(params));
-});
-
 const replace = debounce((routeName: RouteName, params?: object) => {
 	if (!_navigator) return;
 	_navigator.dispatch(StackActions.replace(routeName, params));
+});
+const goBack = debounce(() => {
+	if (!_navigator) return;
+	_navigator.dispatch(CommonActions.goBack());
 });
 const popToTop = debounce(() => {
 	if (!_navigator) return;
 	_navigator.dispatch(StackActions.popToTop());
 });
-
+const setParams = debounce((params: object) => {
+	if (!_navigator) return;
+	_navigator.dispatch(CommonActions.setParams(params));
+});
 const toggleDrawer = debounce(() => {
 	if (!_navigator) return;
 	_navigator.dispatch(DrawerActions.toggleDrawer());
@@ -51,10 +49,10 @@ export default {
 	setTopLevelNavigator,
 	getTopLevelNavigator,
 	navigate,
-	goBack,
-	setParams,
 	replace,
+	goBack,
 	popToTop,
+	setParams,
 	toggleDrawer,
 	closeDrawer,
 };
