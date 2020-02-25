@@ -5,11 +5,11 @@ const initialState: State = {
 
 };
 
-const services: Reducer<State, Action> = (state = initialState, action) => {
+const extra: Reducer<State, Action> = (state = initialState, action) => {
 	switch (action.type) {
 		default:
 			return state;
 	}
 };
 
-export default services;
+export default extra;

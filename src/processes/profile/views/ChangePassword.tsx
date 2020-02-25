@@ -4,7 +4,6 @@ import { useScreenTracker } from '../../../config/firebase';
 
 const ChangePassword = () => {
 	useScreenTracker('ChangePassword');
-
 	return (
 		<View>
 			<Text>Hi, ChangePassword Component!</Text>

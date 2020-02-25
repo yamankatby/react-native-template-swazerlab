@@ -4,7 +4,6 @@ import { useScreenTracker } from '../../../config/firebase';
 
 const EditProfile = () => {
 	useScreenTracker('EditProfile');
-
 	return (
 		<View>
 			<Text>Hi, EditProfile Component!</Text>

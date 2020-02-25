@@ -1,24 +1,14 @@
 import { combineReducers } from 'redux';
-import { persistReducer } from 'redux-persist';
-import AsyncStorage from '@react-native-community/async-storage';
-
+import auth from '../../processes/auth/logic/reducers';
+import extra from '../../processes/extra/logic/reducers';
+import profile from '../../processes/profile/logic/reducers';
 import services from '../../processes/services/logic/reducers';
 import settings from '../../processes/settings/logic/reducers';
-import auth from '../../processes/auth/logic/reducers';
-import profile from '../../processes/profile/logic/reducers';
-
-const generateConfig = (reducer: any, key: string, whitelist?: string[], blacklist?: string[]) =>
-	persistReducer({
-		storage: AsyncStorage,
-		debug: __DEV__,
-		key,
-		whitelist,
-		blacklist,
-	}, reducer);
 
 export default combineReducers({
+	auth,
+	extra,
+	profile,
 	services,
 	settings,
-	auth,
-	profile,
 });

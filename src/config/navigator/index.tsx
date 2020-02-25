@@ -1,10 +1,9 @@
 import React from 'react';
 import { Platform } from 'react-native';
-import { DarkTheme, DefaultTheme, NavigationContainer } from '@react-navigation/native';
+import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { createDrawerNavigator } from '@react-navigation/drawer';
-import { usePalette, useTheme } from '../../assets/styles';
 import navigationService from './navigationService';
 
 import Login from '../../processes/auth/views/Login';
@@ -65,17 +64,8 @@ const MainScreen = () =>
 	);
 
 const AppNavigator = () => {
-	const theme = useTheme();
-	const palette = usePalette();
-
 	return (
-		<NavigationContainer
-			ref={instance => navigationService.setTopLevelNavigator(instance)}
-			theme={{
-				light: { ...DefaultTheme, colors: { ...DefaultTheme.colors, primary: palette.accent() } },
-				dark: { ...DarkTheme, colors: { ...DarkTheme.colors, primary: palette.accent() } },
-			}[theme]}>
-
+		<NavigationContainer ref={instance => navigationService.setTopLevelNavigator(instance)}>
 			<Stack.Navigator>
 				<Stack.Screen name={'Main'} component={MainScreen} options={{ headerShown: false }} />
 				<Stack.Screen name={'Login'} component={Login} />

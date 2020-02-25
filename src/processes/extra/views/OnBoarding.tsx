@@ -4,7 +4,6 @@ import { useScreenTracker } from '../../../config/firebase';
 
 const OnBoarding = () => {
 	useScreenTracker('OnBoarding');
-
 	return (
 		<View>
 			<Text>Hi, OnBoarding Component!</Text>
