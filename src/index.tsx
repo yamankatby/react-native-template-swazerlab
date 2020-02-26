@@ -1,6 +1,7 @@
 import React from 'react';
 import { Provider } from 'react-redux';
-import { store } from './config/store';
+import { PersistGate } from 'redux-persist/integration/react';
+import { persistor, store } from './config/store';
 import AppNavigator from './config/navigator';
 
 const App = () => {
@@ -11,6 +12,8 @@ const App = () => {
 
 export default () => (
 	<Provider store={store}>
-		<App />
+		<PersistGate persistor={persistor}>
+			<App />
+		</PersistGate>
 	</Provider>
 );

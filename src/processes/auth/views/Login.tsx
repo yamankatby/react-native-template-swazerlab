@@ -28,8 +28,8 @@ const Login = () => {
 	return (
 		<View style={{ flex: 1 }}>
 			<Text>Login To Your Account</Text>
-			<TextInput onChangeText={onChangeEmail} />
-			<TextInput onChangeText={onChangePassword} />
+			<TextInput placeholder={'Email'} onChangeText={onChangeEmail} />
+			<TextInput placeholder={'Password'} onChangeText={onChangePassword} />
 			<Button title={'Login'} onPress={onLoginTouched} />
 			<Button title={'Register'} onPress={onRegisterTouched} />
 			<Button title={'ResetPassword'} onPress={onResetPasswordTouched} />

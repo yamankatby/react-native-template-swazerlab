@@ -28,9 +28,9 @@ const Register = () => {
 	return (
 		<View style={{ flex: 1 }}>
 			<Text>Register a new Account</Text>
-			<TextInput onChangeText={onChangeName} />
-			<TextInput onChangeText={onChangeEmail} />
-			<TextInput onChangeText={onChangePassword} />
+			<TextInput placeholder={'Name'} onChangeText={onChangeName} />
+			<TextInput placeholder={'Email'} onChangeText={onChangeEmail} />
+			<TextInput placeholder={'Password'} onChangeText={onChangePassword} />
 			<Button title={'Register'} onPress={onRegisterTouched} />
 			<Button title={'Login'} onPress={onLoginTouched} />
 		</View>

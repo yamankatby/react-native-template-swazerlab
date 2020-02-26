@@ -18,7 +18,7 @@ const ResetPassword = () => {
 	return (
 		<View style={{ flex: 1 }}>
 			<Text>Reset Your Password</Text>
-			<TextInput onChangeText={onChangeEmail} />
+			<TextInput placeholder={'Email'} onChangeText={onChangeEmail} />
 			<Button title={'Reset Password'} onPress={onSendResetPasswordEmailTouched} />
 		</View>
 	);
