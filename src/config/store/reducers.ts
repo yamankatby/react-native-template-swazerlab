@@ -19,7 +19,7 @@ const generateConfig = (reducer: any, key: string, blacklist?: string[], whiteli
 export default combineReducers({
 	auth: generateConfig(auth, '__auth', ['name', 'email', 'password']),
 	extra,
-	profile,
+	profile: generateConfig(profile, '__profile'),
 	services,
 	settings,
 });

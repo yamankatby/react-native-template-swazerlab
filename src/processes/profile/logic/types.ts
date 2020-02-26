@@ -1,11 +1,18 @@
 import { AppAction, AppResultAction } from '../../../config/store/types';
 
 export enum ActionTypes {
+	profile_trigger = 'PROFILE__PROFILE_TRIGGER',
+}
+
+export interface ProfileTriggerAction extends AppAction {
+	type: ActionTypes.profile_trigger;
+	profile: Profile;
 }
 
 export type Action =
 	& AppAction
-	& AppResultAction;
+	& AppResultAction
+	& ProfileTriggerAction;
 
 export interface Profile {
 	id: string;
@@ -20,5 +27,5 @@ export interface Profile {
 }
 
 export interface State {
-
+	profile?: Profile;
 }

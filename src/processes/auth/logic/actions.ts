@@ -1,5 +1,12 @@
 import { AppAction, AppResultAction } from '../../../config/store/types';
-import { ActionTypes, ChangeEmailAction, ChangeNameAction, ChangePasswordAction } from './types';
+import {
+	ActionTypes,
+	AuthStateTriggerAction,
+	ChangeEmailAction,
+	ChangeNameAction,
+	ChangePasswordAction,
+	Provider,
+} from './types';
 
 export const changeName = (name: string): ChangeNameAction => ({
 	type: ActionTypes.change_name,
@@ -52,4 +59,10 @@ export const sendResetPasswordEmail = (): AppAction => ({
 export const sendResetPasswordEmailResult = (hasError: boolean): AppResultAction => ({
 	type: ActionTypes.send_reset_password_email_result,
 	hasError,
+});
+
+export const authStateTrigger = (refreshToken: string, provider: Provider): AuthStateTriggerAction => ({
+	type: ActionTypes.auth_state_trigger,
+	refreshToken,
+	provider,
 });

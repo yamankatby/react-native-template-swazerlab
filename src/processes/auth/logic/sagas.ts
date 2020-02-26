@@ -1,7 +1,8 @@
-import { call, select, takeLatest } from 'redux-saga/effects';
+import { call, put, select, takeLatest } from 'redux-saga/effects';
 import { ActionTypes } from './types';
 import { externalLoginAPI, loginAPI, registerAPI, sendResetPasswordEmailAPI, signInAnonymouslyAPI } from './apis';
 import { AppState } from '../../../config/store/types';
+import { loginResult, registerResult } from './actions';
 
 function* signInAnonymouslySaga() {
 	try {
@@ -15,14 +16,17 @@ function* registerSaga() {
 	const { name, email, password } = yield select((state: AppState) => state.auth);
 	try {
 		yield call(registerAPI, name, email, password);
+		yield put(registerResult(false));
 	} catch (e) {
 
 	}
 }
 
 function* loginSaga() {
+	const { email, password } = yield select((state: AppState) => state.auth);
 	try {
-		yield call(loginAPI);
+		yield call(loginAPI, email, password);
+		yield put(loginResult(false));
 	} catch (e) {
 
 	}

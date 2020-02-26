@@ -4,6 +4,7 @@ import { Action, ActionTypes, State } from './types';
 const initialState: State = {
 	isLoggedIn: false,
 	accessToken: '',
+	refreshToken: '',
 	provider: undefined,
 
 	name: '',
@@ -30,18 +31,22 @@ const auth: Reducer<State, Action> = (state = initialState, action) => {
 			};
 		case ActionTypes.register_result:
 		case ActionTypes.login_result:
+		case ActionTypes.external_login_result:
 			if (action.hasError) return state;
 			return {
 				...state,
 				isLoggedIn: true,
 			};
-		case ActionTypes.external_login_result:
-			return {
-				...state,
-			};
 		case ActionTypes.send_reset_password_email_result:
 			return {
 				...state,
+			};
+
+		case ActionTypes.auth_state_trigger:
+			return {
+				...state,
+				refreshToken: action.refreshToken,
+				provider: action.provider,
 			};
 		default:
 			return state;

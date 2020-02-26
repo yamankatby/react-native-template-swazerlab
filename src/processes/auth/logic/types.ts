@@ -19,6 +19,8 @@ export enum ActionTypes {
 
 	send_reset_password_email = 'AUTH__SEND_RESET_PASSWORD_EMAIL',
 	send_reset_password_email_result = 'AUTH__SEND_RESET_PASSWORD_EMAIL_RESULT',
+
+	auth_state_trigger = 'AUTH__AUTH_STATE_TRIGGER',
 }
 
 export interface ChangeNameAction extends AppAction {
@@ -36,12 +38,19 @@ export interface ChangePasswordAction extends AppAction {
 	password: string;
 }
 
+export interface AuthStateTriggerAction extends AppAction {
+	type: ActionTypes.auth_state_trigger;
+	refreshToken: string;
+	provider: Provider;
+}
+
 export type Action =
 	& AppAction
 	& AppResultAction
 	& ChangeNameAction
 	& ChangeEmailAction
-	& ChangePasswordAction;
+	& ChangePasswordAction
+	& AuthStateTriggerAction;
 
 export type Provider = 'firebase' | 'google' | 'facebook' | 'twitter';
 
