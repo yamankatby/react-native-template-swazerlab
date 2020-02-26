@@ -14,6 +14,14 @@ export const changePassword = (password: string): ChangePasswordAction => ({
 	password,
 });
 
+export const signInAnonymously = (): AppAction => ({
+	type: ActionTypes.sign_in_anonymously,
+});
+export const signInAnonymouslyResult = (hasError: boolean): AppResultAction => ({
+	type: ActionTypes.sign_in_anonymously_result,
+	hasError,
+});
+
 export const register = (): AppAction => ({
 	type: ActionTypes.register,
 });

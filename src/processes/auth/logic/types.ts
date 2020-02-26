@@ -5,6 +5,9 @@ export enum ActionTypes {
 	change_email = 'AUTH__CHANGE_EMAIL',
 	change_password = 'AUTH__CHANGE_PASSWORD',
 
+	sign_in_anonymously = 'AUTH__SIGN_IN_ANONYMOUSLY',
+	sign_in_anonymously_result = 'AUTH__SIGN_IN_ANONYMOUSLY_RESULT',
+
 	register = 'AUTH__REGISTER',
 	register_result = 'AUTH__REGISTER_RESULT',
 
@@ -17,8 +20,6 @@ export enum ActionTypes {
 	send_reset_password_email = 'AUTH__SEND_RESET_PASSWORD_EMAIL',
 	send_reset_password_email_result = 'AUTH__SEND_RESET_PASSWORD_EMAIL_RESULT',
 }
-
-export type Provider = 'google' | 'facebook' | 'twitter';
 
 export interface ChangeNameAction extends AppAction {
 	type: ActionTypes.change_name;
@@ -42,9 +43,12 @@ export type Action =
 	& ChangeEmailAction
 	& ChangePasswordAction;
 
+export type Provider = 'firebase' | 'google' | 'facebook' | 'twitter';
+
 export interface State {
 	isLoggedIn: boolean;
 	accessToken: string;
+	refreshToken: string;
 	provider?: Provider;
 
 	name: string;

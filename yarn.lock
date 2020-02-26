@@ -858,41 +858,41 @@
   resolved "https://registry.yarnpkg.com/@react-native-community/netinfo/-/netinfo-5.3.3.tgz#2e627456d83c1d75d4c43ab6cef70fe125b9691d"
   integrity sha512-L4BsdIEEuG5rKkVNzjESdJ1wvusn0kflj/FrwctaW+xkLxiFs1+mdBg/mvqqfXvVFuBEphbyXJTFT4aG4Okkow==
 
-"@react-native-firebase/analytics@^6.3.3":
-  version "6.3.3"
-  resolved "https://registry.yarnpkg.com/@react-native-firebase/analytics/-/analytics-6.3.3.tgz#492e07f1fc5287a71af0d1b01bb76898b700ea2e"
-  integrity sha512-LmUALDevlPxF3Uyr33eH2uB6pHusLZef/0B+kzEKWQQgRPIDRVtrsKCvRK3aTfTlAEk5kYKyOV2pkgZZuaODzA==
+"@react-native-firebase/analytics@^6.3.4":
+  version "6.3.4"
+  resolved "https://registry.yarnpkg.com/@react-native-firebase/analytics/-/analytics-6.3.4.tgz#f75586ff6d4fa6ed2d0cb1e24d362778ba2bb557"
+  integrity sha512-8nxft9iZfbd+sRgspnb3o9+/TDcfwaltiFDEFZCM+qLQLeIGvVstUFOp5Ecu3jlTfLI0n1IUcIgBHyxBQ2Ktow==
 
-"@react-native-firebase/app-types@6.3.3":
-  version "6.3.3"
-  resolved "https://registry.yarnpkg.com/@react-native-firebase/app-types/-/app-types-6.3.3.tgz#aec56053ee0db8269153027f469a00af6553633c"
-  integrity sha512-OW4ssR/Q5EA68bjPgyYulFYRr0bpNRQ/8CuCWI+lkpdQuKFN3RM5VAiU3WmLf/fz6ofSL+4BIEqrH+8aqygCpA==
+"@react-native-firebase/app-types@6.3.4":
+  version "6.3.4"
+  resolved "https://registry.yarnpkg.com/@react-native-firebase/app-types/-/app-types-6.3.4.tgz#e54a3de33455417db63a7b1de2b7795af1c25cae"
+  integrity sha512-xZ1rVo+GvAfQ/fk6PalYgfsAoV6bd09Vh6SNqR7RPVf9PltaBS0gNxfITXAx6fR+7OyZ1H54orSBjyOIhM+g5Q==
 
-"@react-native-firebase/app@^6.3.3":
-  version "6.3.3"
-  resolved "https://registry.yarnpkg.com/@react-native-firebase/app/-/app-6.3.3.tgz#65fbc4f82b9467bfd6e7d2f45ee90c3e194bf42a"
-  integrity sha512-wlSgXGtJahuakFL1j7KT4o2x3q6F/DTPSNpW9EPNXdfxxMMTwDBbK3Oap9qKt6OiZqNpCrCmtdvCnM485E6kBw==
+"@react-native-firebase/app@^6.3.4":
+  version "6.3.4"
+  resolved "https://registry.yarnpkg.com/@react-native-firebase/app/-/app-6.3.4.tgz#5beee0f8ffb1e58bfc8edc054988c3a4007c5984"
+  integrity sha512-hDV3kjBn1X0KAR5kj2DVnm+65K3WVVPtIpcM4TDQIbXudsKsxoG8Z1lGZ4EY89K6EHgCouapdJf5aoqVQ4UDNw==
   dependencies:
-    "@react-native-firebase/app-types" "6.3.3"
+    "@react-native-firebase/app-types" "6.3.4"
     opencollective-postinstall "^2.0.1"
     superstruct "^0.6.2"
 
-"@react-native-firebase/auth@^6.3.3":
-  version "6.3.3"
-  resolved "https://registry.yarnpkg.com/@react-native-firebase/auth/-/auth-6.3.3.tgz#2c975e7add7bd3f160d4a6e6abb7bae176890ed5"
-  integrity sha512-c0HGz53NZ6BSzuDO8qIEc+A1Bc3P9Prw6SQ+qbDJw/Y7YGSJyiKJphXeSl65mYYsgbB2O+GrJOkNrrbc4b/5lQ==
+"@react-native-firebase/auth@^6.3.4":
+  version "6.3.4"
+  resolved "https://registry.yarnpkg.com/@react-native-firebase/auth/-/auth-6.3.4.tgz#b2f52a4e4cca308e3c169f33d1483de115abe0e2"
+  integrity sha512-Km3lOVlc/qZxPJHB2FtKqoM4g84zCq3gqtzjCi2U42QQd7Xxp0lzUhgedm4un8odkrrjmkNfrrwEDxTw5UG/Vg==
 
-"@react-native-firebase/crashlytics@^6.3.3":
-  version "6.3.3"
-  resolved "https://registry.yarnpkg.com/@react-native-firebase/crashlytics/-/crashlytics-6.3.3.tgz#e46a628cf04e3ae9d3f617423f7097717c5b532f"
-  integrity sha512-5x2J0cNwemBcINVCVtnHj1r4pqZZUEZY4dUUdM94J4hfsN+6iqtatBmaiR/qrSzqiiaJnpAQGlEn+gBZoo/YTQ==
+"@react-native-firebase/crashlytics@^6.3.4":
+  version "6.3.4"
+  resolved "https://registry.yarnpkg.com/@react-native-firebase/crashlytics/-/crashlytics-6.3.4.tgz#775767ce60828fedc923242a459310e2282e54e1"
+  integrity sha512-ddOvaJr2xlz1lVyFG4OZP2KchCzbc2oCZo2/n3EKuFoYSgNAoMXknk/ab+aT4ZMAnCrK0Wvsy8PE/aDGVDeODg==
   dependencies:
     stacktrace-js "^2.0.0"
 
-"@react-native-firebase/remote-config@^6.3.3":
-  version "6.3.3"
-  resolved "https://registry.yarnpkg.com/@react-native-firebase/remote-config/-/remote-config-6.3.3.tgz#6e621e784087ceffc11692106ff6f8355cbb8183"
-  integrity sha512-E7bcyx5GnGZMRbQfyRizMfKmnCW4OWxAQQp4AKLCQ8AgXNmhOj2JgOVef6LdYujYSib5lsgJZPDl+uNcr2nowg==
+"@react-native-firebase/remote-config@^6.3.4":
+  version "6.3.4"
+  resolved "https://registry.yarnpkg.com/@react-native-firebase/remote-config/-/remote-config-6.3.4.tgz#2259531683dfe5583b1c8a8ea00549bfeeb1b5bc"
+  integrity sha512-yH/KamA1e+3cWK0RgTqgzfrk8Shb+CsVoFM5MLmTHAhaq6ObuZ/9EQkFLq+3vumHP20kPo+8ygDZvqdXO/uisA==
 
 "@react-navigation/bottom-tabs@^5.0.0":
   version "5.0.0"

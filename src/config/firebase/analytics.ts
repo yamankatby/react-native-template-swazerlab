@@ -30,7 +30,7 @@ export const useScreenTracker = (screen: string) => {
 	});
 };
 
-export const firebaseEventsMiddleware = (store: any) => (next: any) => (action: any) => {
+export const firebaseEventsMiddleware = () => (next: any) => (action: any) => {
 	const { type, firebase } = action;
 	if (firebase) {
 		logFirebaseEvent(type.toLocaleUpperCase(), typeof firebase === 'object' ? firebase : undefined).then();

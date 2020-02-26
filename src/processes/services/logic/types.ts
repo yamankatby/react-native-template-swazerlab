@@ -2,13 +2,13 @@ import { AppAction, AppResultAction } from '../../../config/store/types';
 import { RouteName } from '../../../config/navigator';
 
 export enum ActionTypes {
-	navigate = 'SERVICES__NAVIGATE',
-	replace = 'SERVICES__REPLACE',
-	go_back = 'SERVICES__GO_BACK',
-	pop_to_top = 'SERVICES__POP_TO_TOP',
-	set_params = 'SERVICES__SET_PARAMS',
-	toggle_drawer = 'SERVICES__TOGGLE_DRAWER',
-	close_drawer = 'SERVICES__CLOSE_DRAWER',
+	navigate = 'SERVICES_NAVIGATION__NAVIGATE',
+	replace = 'SERVICES_NAVIGATION__REPLACE',
+	go_back = 'SERVICES_NAVIGATION__GO_BACK',
+	pop_to_top = 'SERVICES_NAVIGATION__POP_TO_TOP',
+	set_params = 'SERVICES_NAVIGATION__SET_PARAMS',
+	toggle_drawer = 'SERVICES_NAVIGATION__TOGGLE_DRAWER',
+	close_drawer = 'SERVICES_NAVIGATION__CLOSE_DRAWER',
 }
 
 export interface NavigateAction extends AppAction {
