@@ -1,8 +1,15 @@
 import { call, put, select, takeLatest } from 'redux-saga/effects';
 import { ActionTypes } from './types';
-import { externalLoginAPI, loginAPI, registerAPI, sendResetPasswordEmailAPI, signInAnonymouslyAPI } from './apis';
+import {
+	externalLoginAPI,
+	loginAPI,
+	logOutAPI,
+	registerAPI,
+	sendResetPasswordEmailAPI,
+	signInAnonymouslyAPI,
+} from './apis';
 import { AppState } from '../../../config/store/types';
-import { loginResult, registerResult } from './actions';
+import { loginResult, logOutResult, registerResult } from './actions';
 
 function* signInAnonymouslySaga() {
 	try {
@@ -41,8 +48,18 @@ function* externalLoginSaga() {
 }
 
 function* sendResetPasswordEmailSaga() {
+	const { email } = yield select((state: AppState) => state.auth);
 	try {
-		yield call(sendResetPasswordEmailAPI);
+		yield call(sendResetPasswordEmailAPI, email);
+	} catch (e) {
+
+	}
+}
+
+function* logOutSaga() {
+	try {
+		yield call(logOutAPI);
+		yield put(logOutResult(false));
 	} catch (e) {
 
 	}
@@ -54,4 +71,5 @@ export default [
 	takeLatest(ActionTypes.login, loginSaga),
 	takeLatest(ActionTypes.external_login, externalLoginSaga),
 	takeLatest(ActionTypes.send_reset_password_email, sendResetPasswordEmailSaga),
-];
+
+	takeLatest(ActionTypes.log_out, logOutSaga)];

@@ -20,6 +20,9 @@ export enum ActionTypes {
 	send_reset_password_email = 'AUTH__SEND_RESET_PASSWORD_EMAIL',
 	send_reset_password_email_result = 'AUTH__SEND_RESET_PASSWORD_EMAIL_RESULT',
 
+	log_out = 'AUTH__LOG_OUT',
+	log_out_result = 'AUTH__LOG_OUT_RESULT',
+
 	auth_state_trigger = 'AUTH__AUTH_STATE_TRIGGER',
 }
 

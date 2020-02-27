@@ -61,6 +61,14 @@ export const sendResetPasswordEmailResult = (hasError: boolean): AppResultAction
 	hasError,
 });
 
+export const logOut = (): AppAction => ({
+	type: ActionTypes.log_out,
+});
+export const logOutResult = (hasError: boolean): AppResultAction => ({
+	type: ActionTypes.log_out_result,
+	hasError,
+});
+
 export const authStateTrigger = (refreshToken: string, provider: Provider): AuthStateTriggerAction => ({
 	type: ActionTypes.auth_state_trigger,
 	refreshToken,

@@ -41,7 +41,11 @@ const auth: Reducer<State, Action> = (state = initialState, action) => {
 			return {
 				...state,
 			};
-
+		case ActionTypes.log_out_result:
+			return {
+				...state,
+				isLoggedIn: false,
+			};
 		case ActionTypes.auth_state_trigger:
 			return {
 				...state,

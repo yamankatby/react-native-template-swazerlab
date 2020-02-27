@@ -6,7 +6,7 @@ export enum ActionTypes {
 
 export interface ProfileTriggerAction extends AppAction {
 	type: ActionTypes.profile_trigger;
-	profile: Profile;
+	profile?: Profile;
 }
 
 export type Action =

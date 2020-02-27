@@ -66,7 +66,7 @@ const MainScreen = () =>
 const AppNavigator = () => {
 	return (
 		<NavigationContainer ref={instance => navigationService.setTopLevelNavigator(instance)}>
-			<Stack.Navigator initialRouteName={'Register'}>
+			<Stack.Navigator>
 				<Stack.Screen name={'Main'} component={MainScreen} options={{ headerShown: false }} />
 				<Stack.Screen name={'Login'} component={Login} />
 				<Stack.Screen name={'Register'} component={Register} />

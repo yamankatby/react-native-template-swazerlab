@@ -1,13 +1,18 @@
 import React from 'react';
-import { Text, View } from 'react-native';
+import Table, { Section, StaticCell } from 'react-native-js-tableview';
 import { useScreenTracker } from '../../../config/firebase';
+import { useDispatch } from '../../../config/store';
+import { logOut } from '../../auth/logic/actions';
 
 const Profile = () => {
 	useScreenTracker('Profile');
+	const dispatch = useDispatch();
 	return (
-		<View>
-			<Text>Hi, Profile Component!</Text>
-		</View>
+		<Table>
+			<Section>
+				<StaticCell title={'Log Out'} onPress={() => dispatch(logOut())} />
+			</Section>
+		</Table>
 	);
 };
 

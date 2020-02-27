@@ -1,13 +1,16 @@
 import React, { useCallback } from 'react';
 import { Button, Text, TextInput, View } from 'react-native';
 import { useScreenTracker } from '../../../config/firebase';
-import { useDispatch } from '../../../config/store';
+import { useDispatch, useSelector } from '../../../config/store';
 import { changeEmail, changeName, changePassword, register } from '../logic/actions';
 import { navigate } from '../../services/logic/actions';
 
 const Register = () => {
 	useScreenTracker('Register');
 	const dispatch = useDispatch();
+	const name = useSelector(state => state.auth.name);
+	const email = useSelector(state => state.auth.email);
+	const password = useSelector(state => state.auth.password);
 
 	const onChangeName = useCallback((name: string) => {
 		dispatch(changeName(name));
@@ -28,9 +31,9 @@ const Register = () => {
 	return (
 		<View style={{ flex: 1 }}>
 			<Text>Register a new Account</Text>
-			<TextInput placeholder={'Name'} onChangeText={onChangeName} />
-			<TextInput placeholder={'Email'} onChangeText={onChangeEmail} />
-			<TextInput placeholder={'Password'} onChangeText={onChangePassword} />
+			<TextInput value={name} placeholder={'Name'} onChangeText={onChangeName} />
+			<TextInput value={email} placeholder={'Email'} onChangeText={onChangeEmail} />
+			<TextInput value={password} placeholder={'Password'} onChangeText={onChangePassword} />
 			<Button title={'Register'} onPress={onRegisterTouched} />
 			<Button title={'Login'} onPress={onLoginTouched} />
 		</View>

@@ -23,8 +23,12 @@ export const externalLoginAPI = async () => {
 
 };
 
-export const sendResetPasswordEmailAPI = async () => {
+export const sendResetPasswordEmailAPI = async (email: string) => {
+	await auth().sendPasswordResetEmail(email);
+};
 
+export const logOutAPI = async () => {
+	await auth().signOut();
 };
 
 export const useAuthStateListener = () => {
