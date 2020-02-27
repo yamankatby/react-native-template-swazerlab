@@ -1,5 +1,5 @@
 import React, { useCallback } from 'react';
-import { Button, Text, TextInput, View } from 'react-native';
+import { Button, TextInput, View } from 'react-native';
 import { useScreenTracker } from '../../../config/firebase';
 import { useDispatch, useSelector } from '../../../config/store';
 import { changeEmail, sendResetPasswordEmail } from '../logic/actions';
@@ -18,8 +18,14 @@ const ResetPassword = () => {
 
 	return (
 		<View style={{ flex: 1 }}>
-			<Text>Reset Your Password</Text>
-			<TextInput value={email} placeholder={'Email'} onChangeText={onChangeEmail} />
+			<TextInput
+				value={email}
+				placeholder={'Email'}
+				onChangeText={onChangeEmail}
+				returnKeyType={'next'}
+				autoCapitalize={'none'}
+				keyboardType={'email-address'}
+			/>
 			<Button title={'Reset Password'} onPress={onSendResetPasswordEmailTouched} />
 		</View>
 	);

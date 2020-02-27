@@ -7,14 +7,15 @@ import { navigate } from '../../services/logic/actions';
 const More = () => {
 	useScreenTracker('More');
 	const dispatch = useDispatch();
+	const isLoggedIn = useSelector(state => state.auth.isLoggedIn);
 	const name = useSelector(state => state.profile.profile?.name);
 	const email = useSelector(state => state.profile.profile?.email);
 	return (
 		<Table>
 			<Section>
-				{name ? (
+				{isLoggedIn ? (
 					<BioCell
-						title={name}
+						title={name!}
 						subtitle={email}
 						accessory={'disclosure'}
 						onPress={() => dispatch(navigate('Profile'))}
