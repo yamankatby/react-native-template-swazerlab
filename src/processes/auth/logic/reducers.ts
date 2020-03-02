@@ -42,6 +42,7 @@ const auth: Reducer<State, Action> = (state = initialState, action) => {
 				...state,
 			};
 		case ActionTypes.log_out_result:
+			if (action.hasError) return;
 			return {
 				...state,
 				isLoggedIn: false,

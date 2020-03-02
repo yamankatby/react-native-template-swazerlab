@@ -1,4 +1,5 @@
 import { all, call, put, select, takeLatest } from 'redux-saga/effects';
+import NativeDialog from 'react-native-native-dialog';
 import { ActionTypes } from './types';
 import {
 	externalLoginAPI,
@@ -64,11 +65,25 @@ function* sendResetPasswordEmailSaga() {
 }
 
 function* logOutSaga() {
+	const showDialog = () => new Promise((resolve, reject) => {
+		NativeDialog.showDialog({
+			title: 'some',
+			preferredStyle: 'actionSheet',
+			positiveButton: 'ok',
+			negativeButton: 'cancel',
+			message: 'do some th',
+			positiveButtonStyle: 'destructive',
+			negativeButtonStyle: 'cancel',
+			onPositivePress: resolve,
+			onNegativePress: reject,
+		});
+	});
+
 	try {
+		yield call(showDialog);
 		yield call(logOutAPI);
 		yield put(logOutResult(false));
 	} catch (e) {
-
 	}
 }
 

@@ -13,6 +13,7 @@ function* changeProfilePhotoSaga() {
 			maxHeight: 420,
 			maxWidth: 420,
 			mediaType: 'photo',
+			tintColor: 'red',
 		}, (response) => {
 			if (response.didCancel || response.error)
 				reject({ didCancel: response.didCancel, error: response.error });

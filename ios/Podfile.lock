@@ -3,6 +3,7 @@ PODS:
   - Crashlytics (3.14.0):
     - Fabric (~> 1.10.2)
   - DoubleConversion (1.1.6)
+  - DynamicBlurView (3.0.1)
   - Fabric (1.10.2)
   - FBLazyVector (0.61.5)
   - FBReactNativeSpec (0.61.5):
@@ -119,6 +120,8 @@ PODS:
     - nanopb/encode (= 0.3.9011)
   - nanopb/decode (0.3.9011)
   - nanopb/encode (0.3.9011)
+  - PopupDialog (1.0.0):
+    - DynamicBlurView (~> 3.0.1)
   - Protobuf (3.11.4)
   - RCTRequired (0.61.5)
   - RCTTypeSafety (0.61.5):
@@ -287,6 +290,9 @@ PODS:
     - React
   - react-native-image-picker (2.3.1):
     - React
+  - react-native-native-dialog (2.1.0):
+    - PopupDialog
+    - React
   - react-native-netinfo (5.5.1):
     - React
   - react-native-safe-area-context (0.7.3):
@@ -391,6 +397,7 @@ DEPENDENCIES:
   - React-jsinspector (from `../node_modules/react-native/ReactCommon/jsinspector`)
   - "react-native-blur (from `../node_modules/@react-native-community/blur`)"
   - react-native-image-picker (from `../node_modules/react-native-image-picker`)
+  - react-native-native-dialog (from `../node_modules/react-native-native-dialog`)
   - "react-native-netinfo (from `../node_modules/@react-native-community/netinfo`)"
   - react-native-safe-area-context (from `../node_modules/react-native-safe-area-context`)
   - react-native-splash-screen (from `../node_modules/react-native-splash-screen`)
@@ -424,6 +431,7 @@ SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - boost-for-react-native
     - Crashlytics
+    - DynamicBlurView
     - Fabric
     - Firebase
     - FirebaseABTesting
@@ -443,6 +451,7 @@ SPEC REPOS:
     - GoogleUtilities
     - GTMSessionFetcher
     - nanopb
+    - PopupDialog
     - Protobuf
 
 EXTERNAL SOURCES:
@@ -478,6 +487,8 @@ EXTERNAL SOURCES:
     :path: "../node_modules/@react-native-community/blur"
   react-native-image-picker:
     :path: "../node_modules/react-native-image-picker"
+  react-native-native-dialog:
+    :path: "../node_modules/react-native-native-dialog"
   react-native-netinfo:
     :path: "../node_modules/@react-native-community/netinfo"
   react-native-safe-area-context:
@@ -537,6 +548,7 @@ SPEC CHECKSUMS:
   boost-for-react-native: 39c7adb57c4e60d6c5479dd8623128eb5b3f0f2c
   Crashlytics: 540b7e5f5da5a042647227a5e3ac51d85eed06df
   DoubleConversion: 5805e889d232975c086db112ece9ed034df7a0b2
+  DynamicBlurView: b1df5415f9bd31897549e5d7077e5ec120a4d636
   Fabric: 706c8b8098fff96c33c0db69cbf81f9c551d0d74
   FBLazyVector: aaeaf388755e4f29cd74acbc9e3b8da6d807c37f
   FBReactNativeSpec: 118d0d177724c2d67f08a59136eb29ef5943ec75
@@ -560,6 +572,7 @@ SPEC CHECKSUMS:
   GoogleUtilities: 06eb53bb579efe7099152735900dd04bf09e7275
   GTMSessionFetcher: cea130bbfe5a7edc8d06d3f0d17288c32ffe9925
   nanopb: 18003b5e52dab79db540fe93fe9579f399bd1ccd
+  PopupDialog: 28f29a1ffe9e1fab32fb258b53d56ca31670e8a2
   Protobuf: 176220c526ad8bd09ab1fb40a978eac3fef665f7
   RCTRequired: b153add4da6e7dbc44aebf93f3cf4fcae392ddf1
   RCTTypeSafety: 9aa1b91d7f9310fc6eadc3cf95126ffe818af320
@@ -572,6 +585,7 @@ SPEC CHECKSUMS:
   React-jsinspector: fa0ecc501688c3c4c34f28834a76302233e29dc0
   react-native-blur: cad4d93b364f91e7b7931b3fa935455487e5c33c
   react-native-image-picker: 6a850c41f57f0848d918c2a77aedd7aa272ffa30
+  react-native-native-dialog: b99b69aa3c38d48ffc3eb4ec0c6abbd3f9be4e3f
   react-native-netinfo: 3bf235d94cc291cf0673ad9fd9eaae82f84ed8a9
   react-native-safe-area-context: e200d4433aba6b7e60b52da5f37af11f7a0b0392
   react-native-splash-screen: 200d11d188e2e78cea3ad319964f6142b6384865

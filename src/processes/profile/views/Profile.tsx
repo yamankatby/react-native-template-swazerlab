@@ -9,12 +9,12 @@ import { navigate } from '../../services/logic/actions';
 const Profile = () => {
 	useScreenTracker('Profile');
 	const dispatch = useDispatch();
-	const isLoggedIn = useSelector(state => state.auth.isLoggedIn);
+	const anonymous = useSelector(state => state.profile.profile?.anonymous);
 	const name = useSelector(state => state.profile.profile?.name);
 	const email = useSelector(state => state.profile.profile?.email);
 	const phoneNumber = useSelector(state => state.profile.profile?.phoneNumber);
 
-	if (!isLoggedIn) return <View />;
+	if (anonymous) return <View />;
 	return (
 		<Table>
 			<Section separatorInsetLeft={54}>
