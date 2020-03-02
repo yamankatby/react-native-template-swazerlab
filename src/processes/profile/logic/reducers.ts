@@ -13,6 +13,10 @@ const profile: Reducer<State, Action> = (state = initialState, action) => {
 				...state,
 				profile: action.profile,
 			};
+		case ActionTypes.change_profile_photo_result:
+			return {
+				...state,
+			};
 		default:
 			return state;
 	}

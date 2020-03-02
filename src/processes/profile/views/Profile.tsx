@@ -17,12 +17,17 @@ const Profile = () => {
 	if (!isLoggedIn) return <View />;
 	return (
 		<Table>
-			<Section>
+			<Section separatorInsetLeft={54}>
 				<BioCell
 					title={name!}
 					subtitle={email}
 					accessory={'disclosure'}
 					onPress={() => dispatch(navigate('EditProfile'))}
+				/>
+				<StaticCell
+					title={'Change Password'}
+					accessory={'disclosure'}
+					onPress={() => dispatch(navigate('ChangePassword'))}
 				/>
 			</Section>
 			{(name || email || phoneNumber) && (
