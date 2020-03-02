@@ -34,6 +34,7 @@ export const logOutAPI = async () => {
 export const useAuthStateListener = () => {
 	const dispatch = useDispatch();
 	const unsubscribe = auth().onAuthStateChanged((user) => {
+		console.log('user', user);
 		if (!user) return;
 		const { refreshToken, provider, ...profile } = morphism(AuthStateMap, user);
 		dispatch(authStateTrigger(refreshToken, provider));
