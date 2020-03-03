@@ -1,17 +1,39 @@
-import React, { useCallback } from 'react';
-import { Button, Image, View } from 'react-native';
-import Table, { Section, StaticCell } from 'react-native-js-tableview';
+import React, { useCallback, useEffect } from 'react';
+import { Button, Image, TextInput, View } from 'react-native';
 import { useScreenTracker } from '../../../config/firebase';
 import { useDispatch, useSelector } from '../../../config/store';
-import { changeProfilePhoto } from '../logic/actions';
+import {
+	changeDraftProfileName,
+	changeProfilePhoto,
+	clearDraftProfile,
+	setDraftProfile,
+	updateProfile,
+} from '../logic/actions';
+import { useFirstRender } from '../../../config/utilities';
 
 const EditProfile = () => {
 	useScreenTracker('EditProfile');
 	const dispatch = useDispatch();
-	const photoURL = useSelector(state => state.profile.profile?.photoURL);
+	const photoURL = useSelector(state => state.profile.draftProfile?.photoURL);
+	const name = useSelector(state => state.profile.draftProfile?.name);
+
+	useFirstRender(() => {
+		dispatch(setDraftProfile());
+	});
+	useEffect(() => () => {
+		dispatch(clearDraftProfile());
+	}, []);
 
 	const onChoosePhotoTouched = useCallback(() => {
 		dispatch(changeProfilePhoto());
+	}, []);
+
+	const onChangeName = useCallback((name: string) => {
+		dispatch(changeDraftProfileName(name));
+	}, []);
+
+	const onUpdateProfileTouched = useCallback(() => {
+		dispatch(updateProfile());
 	}, []);
 
 	return (
@@ -24,11 +46,15 @@ const EditProfile = () => {
 				justifyContent: 'center',
 				backgroundColor: 'red',
 			}} />
-			<Table>
-				<Section>
-					<StaticCell title={'fdsa'} />
-				</Section>
-			</Table>
+
+			<TextInput
+				value={name}
+				placeholder={'Full Name'}
+				onChangeText={onChangeName}
+				returnKeyType={'next'}
+				autoCapitalize={'words'}
+			/>
+			<Button title={'Save Profile'} onPress={onUpdateProfileTouched} />
 		</View>
 	);
 };

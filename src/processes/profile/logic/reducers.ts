@@ -17,6 +17,25 @@ const profile: Reducer<State, Action> = (state = initialState, action) => {
 			return {
 				...state,
 			};
+		case ActionTypes.set_draft_profile:
+			return {
+				...state,
+				draftProfile: state.profile,
+			};
+		case ActionTypes.clear_draft_profile:
+			return {
+				...state,
+				draftProfile: initialState.draftProfile,
+			};
+		case ActionTypes.change_draft_profile_name:
+			if (!state.draftProfile) return state;
+			return {
+				...state,
+				draftProfile: {
+					...state.draftProfile,
+					name: action.name,
+				},
+			};
 		default:
 			return state;
 	}

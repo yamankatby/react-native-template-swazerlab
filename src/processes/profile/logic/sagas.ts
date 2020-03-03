@@ -1,8 +1,10 @@
-import { call, select, takeLatest } from 'redux-saga/effects';
+import { all, call, put, select, takeLatest } from 'redux-saga/effects';
 import ImagePicker from 'react-native-image-picker';
-import { changeProfilePhotoAPI } from './apis';
+import { changeProfilePhotoAPI, updateProfileAPI } from './apis';
 import { ActionTypes } from './types';
 import { AppState } from '../../../config/store/types';
+import { updateProfileResult } from './actions';
+import { goBack } from '../../services/logic/actions';
 
 function* changeProfilePhotoSaga() {
 	const showImagePicker = (): Promise<string> => new Promise((resolve, reject) => {
@@ -31,6 +33,21 @@ function* changeProfilePhotoSaga() {
 	}
 }
 
+function* updateProfileSaga() {
+	const name = yield select((state: AppState) => state.profile.draftProfile?.name);
+
+	try {
+		yield call(updateProfileAPI, name!);
+		yield all([
+			put(updateProfileResult(false)),
+			put(goBack()),
+		]);
+	} catch (e) {
+
+	}
+}
+
 export default [
 	takeLatest(ActionTypes.change_profile_photo, changeProfilePhotoSaga),
+	takeLatest(ActionTypes.update_profile, updateProfileSaga),
 ];

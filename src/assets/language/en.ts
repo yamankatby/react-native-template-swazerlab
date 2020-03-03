@@ -45,10 +45,10 @@ export default {
 	titleMore: 'More',
 	titleSettings: 'Settings',
 
-	// UPDATE PROFILE
+	// Update Profile
 	titleUpdateProfile: 'Edit Profile',
 
-	// SETTINGS
+	// Settings
 	textDarkMode: 'Dark Mode',
 
 	// About
@@ -61,7 +61,7 @@ export default {
 	textAboutWebsiteTitle: 'Our website',
 	textAboutVersionTitle: 'Application version',
 
-	// HELP CENTER
+	// Help Center
 	titleHelpCenter: 'Help Center',
 	textHelpCenter: 'Welcome to The Help Center',
 	textNeedHelp: 'Welcome to the help center. Here you can check out all kind of information and questions regarding our services. Please read the FAQ section before contacting us or sending a complaint.',

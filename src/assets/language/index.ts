@@ -1,9 +1,8 @@
 import LocalizedStrings from 'react-native-localization';
 
 import en from './en';
-import ar from './ar';
 
-const language = new LocalizedStrings({ en, ar });
+const language = new LocalizedStrings({ en });
 
 export const isRtl = () => language.getLanguage() === 'ar';
 

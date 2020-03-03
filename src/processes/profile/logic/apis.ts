@@ -1,7 +1,6 @@
 import auth from '@react-native-firebase/auth';
 import storage from '@react-native-firebase/storage';
 
-
 export const changeProfilePhotoAPI = async (uid: string, imagePath: string) => {
 	storage()
 		.ref(`${uid}/profile-photo.${imagePath.split('.').pop()}`)
@@ -23,4 +22,12 @@ export const changeProfilePhotoAPI = async (uid: string, imagePath: string) => {
 				throw error;
 			},
 		);
+};
+
+export const updateProfileAPI = async (name: string) => {
+	const currentUser = auth().currentUser;
+	if (!currentUser) return;
+	await currentUser.updateProfile({
+		displayName: name,
+	});
 };
