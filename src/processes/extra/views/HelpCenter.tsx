@@ -1,13 +1,23 @@
 import React from 'react';
-import { Text, View } from 'react-native';
+import Table, { Section, StaticCell } from 'react-native-js-tableview';
 import { useScreenTracker } from '../../../config/firebase';
 
 const HelpCenter = () => {
 	useScreenTracker('HelpCenter');
 	return (
-		<View>
-			<Text>Hi, HelpCenter Component!</Text>
-		</View>
+		<Table>
+			<Section>
+				<StaticCell title={'Contact Us'} />
+				<StaticCell title={'Follow Us'} />
+				<StaticCell title={'Frequently Asked Questions'} />
+				<StaticCell title={'Privacy Policy'} />
+				<StaticCell title={'Terms of Service'} />
+			</Section>
+			<Section>
+				<StaticCell title={'Tell a Friend'} />
+				<StaticCell title={'About'} />
+			</Section>
+		</Table>
 	);
 };
 

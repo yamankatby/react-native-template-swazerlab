@@ -24,6 +24,15 @@ const More = () => {
 					<StaticCell title={'Log In'} accessory={'disclosure'} onPress={() => dispatch(navigate('Login'))} />
 				)}
 			</Section>
+
+			<Section>
+				<StaticCell
+					title={'Help Center'}
+					accessory={'disclosure'}
+					onPress={() => dispatch(navigate('HelpCenter'))}
+				/>
+				<StaticCell title={'Tell a Friend'} />
+			</Section>
 		</Table>
 	);
 };
