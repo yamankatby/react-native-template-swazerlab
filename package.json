@@ -24,7 +24,7 @@
     "@react-navigation/stack": "^5.1.0",
     "add": "^2.0.6",
     "chroma-js": "^2.1.0",
-    "lodash": "^4.17.15",
+    "lodash": "^4.17.21",
     "morphism": "^1.12.3",
     "react": "^16.12.0",
     "react-native": "^0.61.5",
